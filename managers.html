@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <!-- Google Adsense -->
+     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2067618612606246"
+     crossorigin="anonymous"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VaKKoTTy Gaming | Manager Guides</title>
+    <!-- Bootstrap 5.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Oxanium:wght@400;700&display=swap" rel="stylesheet">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FF6B00;
+            --primary-dark: #E05D00;
+            --secondary: #00A8E8;
+            --dark: #121212;
+            --light: #F8F9FA;
+            --gray: #2D2D2D;
+            --light-gray: #E0E0E0;
+        }
+
+        body {
+            font-family: 'Oxanium', sans-serif;
+            background-color: var(--dark);
+            color: var(--light);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        .navbar {
+            background-color: rgba(18, 18, 18, 0.9) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 107, 0, 0.3);
+        }
+
+        .navbar-brand {
+            font-weight: 900;
+            font-size: 1.8rem;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .nav-link {
+            color: var(--light) !important;
+            font-weight: 500;
+            margin: 0 10px;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--primary) !important;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary);
+            transition: width 0.3s;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            color: white;
+            font-weight: 600;
+            padding: 10px 25px;
+            border-radius: 50px;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            border-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 107, 0, 0.3);
+        }
+
+        .btn-outline-primary {
+            border-color: var(--primary);
+            color: var(--primary);
+            font-weight: 600;
+            padding: 10px 25px;
+            border-radius: 50px;
+            transition: all 0.3s;
+        }
+
+        .btn-outline-primary:hover {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 107, 0, 0.3);
+        }
+
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 50px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 4px;
+            bottom: -10px;
+            left: 0;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+
+        /* Tactics Style */
+        .tactics-nav {
+            background-color: var(--gray);
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 30px;
+        }
+
+        .tactics-nav .nav-link {
+            color: var(--light) !important;
+            border-radius: 5px;
+            padding: 8px 15px;
+            margin: 0 5px;
+            transition: all 0.3s;
+        }
+
+        .tactics-nav .nav-link.active {
+            background-color: var(--primary);
+            color: white !important;
+        }
+
+        .tactics-nav .nav-link:hover:not(.active) {
+            background-color: rgba(255, 107, 0, 0.2);
+        }
+
+        .manager-card {
+            background-color: var(--gray);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .manager-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            border-color: var(--primary);
+        }
+
+        .manager-img {
+            height: 200px;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .formation-img {
+            width: 100%;
+            max-height: 300px;
+            object-fit: contain;
+            margin: 20px 0;
+        }
+
+        .player-role {
+            background-color: rgba(0, 168, 232, 0.1);
+            border-left: 3px solid var(--secondary);
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 0 5px 5px 0;
+        }
+
+        .player-role h5 {
+            color: var(--secondary);
+        }
+
+        .skill-badge {
+            display: inline-block;
+            background-color: rgba(255, 107, 0, 0.2);
+            color: var(--primary);
+            padding: 3px 8px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+
+        /* Pitch Formation */
+        .formation-pitch {
+            background-color: #1a3a1a;
+            background-image: linear-gradient(to top, #1a3a1a, #1a3a1a 49%, white 49%, white 51%, #1a3a1a 51%);
+            border: 2px solid white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 30px 0;
+            position: relative;
+            min-height: 650px;
+            width: 600px;
+        }
+
+        .pitch-lines {
+            position: absolute;
+            width: calc(100% - 40px);
+            height: calc(100% - 40px);
+            top: 20px;
+            left: 20px;
+        }
+
+        .pitch-lines .center-circle {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border: 2px solid white;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .pitch-lines .center-spot {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: white;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .player-position {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            z-index: 2;
+        }
+
+        .player-position:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(255, 107, 0, 0.7);
+        }
+
+        .position-tooltip {
+            position: absolute;
+            background-color: var(--dark);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            width: 200px;
+            z-index: 10;
+            display: none;
+            border: 1px solid var(--primary);
+        }
+        .footer {
+            background-color: var(--gray);
+            padding: 50px 0 20px;
+        }
+
+        .footer-links a {
+            color: var(--light);
+            text-decoration: none;
+            transition: color 0.3s;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            margin-top: 30px;
+        }
+
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background-color: var(--gray);
+            color: var(--light);
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: all 0.3s;
+        }
+
+        .social-icon:hover {
+            background-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        /* Dark/Light Mode Toggle */
+        .theme-toggle {
+            width: 50px;
+            height: 25px;
+            background-color: var(--gray);
+            border-radius: 50px;
+            position: relative;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            display: flex;
+            align-items: center;
+            padding: 0 5px;
+        }
+
+        .theme-toggle i {
+            font-size: 12px;
+            color: var(--light);
+            transition: all 0.3s;
+        }
+
+        .theme-toggle .sun {
+            opacity: 0;
+            transform: translateX(-10px);
+        }
+
+        .theme-toggle .moon {
+            opacity: 1;
+            transform: translateX(10px);
+        }
+
+        [data-bs-theme="light"] .theme-toggle .sun {
+            opacity: 1;
+            transform: translateX(10px);
+            color: var(--dark);
+        }
+
+        [data-bs-theme="light"] .theme-toggle .moon {
+            opacity: 0;
+            transform: translateX(-10px);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .formation-pitch {
+                min-height: 400px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .formation-pitch {
+                min-height: 400px;
+                width: 350px;
+            }
+            
+            .player-position {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+        }
+
+        /* Light Mode Styles */
+        [data-bs-theme="light"] body {
+            background-color: var(--light);
+            color: var(--dark);
+        }
+
+        [data-bs-theme="light"] .navbar {
+            background-color: rgba(248, 249, 250, 0.9) !important;
+            border-bottom: 1px solid rgba(0, 168, 232, 0.3);
+        }
+
+        [data-bs-theme="light"] .nav-link {
+            color: var(--dark) !important;
+        }
+
+        [data-bs-theme="light"] .manager-card {
+            background-color: white;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        [data-bs-theme="light"] .manager-card:hover {
+            border-color: var(--secondary);
+        }
+
+        [data-bs-theme="light"] .tactics-nav {
+            background-color: #f1f1f1;
+        }
+
+        [data-bs-theme="light"] .tactics-nav .nav-link {
+            color: var(--dark) !important;
+        }
+
+        [data-bs-theme="light"] .player-role {
+            background-color: rgba(0, 168, 232, 0.05);
+        }
+
+        [data-bs-theme="light"] .formation-pitch {
+            background-color: #d4f5d4;
+            background-image: linear-gradient(to right, #d4f5d4, #d4f5d4 49%, #333 49%, #333 51%, #d4f5d4 51%);
+            border-color: #550606;
+        }
+
+        [data-bs-theme="light"] .pitch-lines .center-circle,
+        [data-bs-theme="light"] .pitch-lines .center-spot {
+            border-color: #333;
+        }
+
+        [data-bs-theme="light"] .pitch-lines .center-spot {
+            background-color: #333;
+        }
+
+        [data-bs-theme="light"] .position-tooltip {
+            background-color: white;
+            color: var(--dark);
+            border: 1px solid var(--secondary);
+        }
+
+        [data-bs-theme="light"] .footer {
+            background-color: #f1f1f1;
+        }
+
+        [data-bs-theme="light"] .footer-links a {
+            color: var(--dark);
+        }
+
+        [data-bs-theme="light"] .copyright {
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        [data-bs-theme="light"] .social-icon {
+            background-color: #e0e0e0;
+            color: var(--dark);
+        }
+
+        [data-bs-theme="light"] .position-btn {
+            background-color: #e0e0e0;
+            color: var(--dark);
+        }
+
+        [data-bs-theme="light"] .position-btn:hover, 
+        [data-bs-theme="light"] .position-btn.active {
+            background-color: var(--secondary);
+            border-color: var(--secondary);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">VaKKoTTy Gaming</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="progressions.html">Player Progressions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="managers.html">Tatics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <button class="btn btn-outline-primary" onclick="window.open('https://www.youtube.com/@VaKKoTTy_Gaming')">
+                            <i class="fab fa-youtube me-2"></i>YouTube
+                        </button>
+                    </li>
+                    <li class="nav-item ms-lg-2 d-flex align-items-center">
+                        <button class="theme-toggle" id="themeToggle">
+                            <i class="fas fa-sun sun"></i>
+                            <i class="fas fa-moon moon"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section pt-5">
+        <div class="container pt-5 mt-5">
+            <div class="row align-items-center">
+                <div class="col-lg-12 text-center">
+                    <h1 class="hero-title">Manager Tactics Guide</h1>
+                    <p class="hero-subtitle">Discover the best managers and formations for each playing style in eFootball</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tactics Navigation -->
+    <section class="py-5">
+        <div class="container">
+            <ul class="nav nav-pills tactics-nav justify-content-center" id="tacticsTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="quick-counter-tab" data-bs-toggle="pill" data-bs-target="#quick-counter" type="button" role="tab" aria-controls="quick-counter" aria-selected="true">Quick Counter</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="long-ball-tab" data-bs-toggle="pill" data-bs-target="#long-ball" type="button" role="tab" aria-controls="long-ball" aria-selected="false">Long Ball Counter</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="possession-tab" data-bs-toggle="pill" data-bs-target="#possession" type="button" role="tab" aria-controls="possession" aria-selected="false">Possession Game</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="out-wide-tab" data-bs-toggle="pill" data-bs-target="#out-wide" type="button" role="tab" aria-controls="out-wide" aria-selected="false">Out Wide</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="long-ball-attack-tab" data-bs-toggle="pill" data-bs-target="#long-ball-attack" type="button" role="tab" aria-controls="long-ball-attack" aria-selected="false">Long Ball</button>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Tactics Content -->
+    <section class="py-5">
+        <div class="container">
+            <div class="tab-content" id="tacticsTabContent">
+                <!-- Quick Counter -->
+                <div class="tab-pane fade show active" id="quick-counter" role="tabpanel" aria-labelledby="quick-counter-tab">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="manager-card">
+                                <img src="images/xabi.jpg" alt="Manager" class="manager-img">
+                                <div class="p-4">
+                                    <h3>Xabi Alonso</h3>
+                                    <p class="text-primary">Quick Counter Specialist</p>
+                                    <p>High pressing, fast transitions, and aggressive attacking play characterize Xabi's style.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <span class="badge bg-primary me-2">Quick Counter: 88</span>
+                                        </div>
+                                        <span class="badge bg-dark">4-3-3</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-8">
+                            <h3 class="mb-4" style="margin-top: 2rem;">Quick Counter Tactics</h3>
+                            <p>The Quick Counter playstyle focuses on rapid transitions from defense to attack, exploiting spaces left by the opponent. Players need high speed, acceleration, and stamina to execute this effectively.</p>
+                            
+                            <div class="formation-pitch mt-4">
+                                <div class="pitch-lines">
+                                    <div class="center-circle"></div>
+                                    <div class="center-spot"></div>
+                                </div>
+                                <!-- Formation: 4-3-3 -->
+                                <div class="player-position" style="top: 90%; left: 46%;" data-position="GK" data-requirements="Defensive GK, GK Awareness: High, Reflexes: 85+, Jumping: 80+"></div>
+                                <div class="player-position" style="top: 70%; left: 16%;" data-position="LB" data-requirements="Speed: 85+, Stamina: 80+, Defensive Awareness: 75+, Passing: 75+"></div>
+                                <div class="player-position" style="top: 75%; left: 36%;" data-position="CB" data-requirements="Defensive Awareness: 85+, Physical Contact: 80+, Speed: 75+"></div>
+                                <div class="player-position" style="top: 75%; left: 56%;" data-position="CB" data-requirements="Defensive Awareness: 85+, Physical Contact: 80+, Speed: 75+"></div>
+                                <div class="player-position" style="top: 70%; left: 76%;" data-position="RB" data-requirements="Speed: 85+, Stamina: 80+, Defensive Awareness: 75+, Passing: 75+"></div>
+                                <div class="player-position" style="top: 46%; left: 26%;" data-position="CMF" data-requirements="Stamina: 85+, Ball Winning: 80+, Passing: 75+"></div>
+                                <div class="player-position" style="top: 50%; left: 46%;" data-position="DM" data-requirements="Passing: 85+, Dribbling: 80+, Stamina: 80+"></div>
+                                <div class="player-position" style="top: 46%; left: 66%;" data-position="CMF" data-requirements="Stamina: 85+, Ball Winning: 80+, Passing: 75+"></div>
+                                <div class="player-position" style="top: 13%; left: 16%;" data-position="LWF" data-requirements="Speed: 90+, Acceleration: 90+, Dribbling: 85+, Finishing: 80+"></div>
+                                <div class="player-position" style="top: 10%; left: 46%;" data-position="CF" data-requirements="Speed: 85+, Finishing: 85+, Physical Contact: 80+, Heading: 75+"></div>
+                                <div class="player-position" style="top: 13%; left: 76%;" data-position="RWF" data-requirements="Speed: 90+, Acceleration: 90+, Dribbling: 85+, Finishing: 80+"></div>
+                            </div>
+                            
+                            <div class="player-role mt-4">
+                                <h5>Key Player Requirements</h5>
+                                <div>
+                                    <span class="skill-badge">Speed 85+</span>
+                                    <span class="skill-badge">Acceleration 85+</span>
+                                    <span class="skill-badge">Stamina 80+</span>
+                                    <span class="skill-badge">Offensive Awareness 80+</span>
+                                    <span class="skill-badge">Ball Control 75+</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-4">
+                                <h4>Recommended Players</h4>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="bg-gray p-3 rounded mb-3">
+                                            <h6>CF: Kylian Mbappé</h6>
+                                            <p>Speed: 99, Acceleration: 97, Finishing: 90</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="bg-gray p-3 rounded mb-3">
+                                            <h6>LW: Vinícius Júnior</h6>
+                                            <p>Speed: 95, Dribbling: 90, Acceleration: 94</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="bg-gray p-3 rounded mb-3">
+                                            <h6>CM: Jude Bellingham</h6>
+                                            <p>Stamina: 88, Passing: 86, Ball Control: 87</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-4">
+                                <h4>Tactical Instructions</h4>
+                                <ul>
+                                    <li>Use good defensive players.</li>
+                                    <li>Attacking style is "Fast Build-up"</li>
+                                    <li>Fullbacks should be "Defensive Fullback".</li>
+                                    <li>Wingers should "Cut Inside".</li>
+                                    <li>Striker should have "Anchoring" instruction</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Long Ball Counter -->
+                <div class="tab-pane fade" id="long-ball" role="tabpanel" aria-labelledby="long-ball-tab">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="manager-card">
+                                <img src="images/arteta.jpg" alt="Manager" class="manager-img">
+                                <div class="p-4">
+                                    <h3>Mikel Arteta</h3>
+                                    <p class="text-primary">Long Ball Counter Expert</p>
+                                    <p>Defensive solidity with quick transitions to target forwards using long passes.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <span class="badge bg-primary me-2">Long Ball Counter: 88</span>
+                                            <span class="badge bg-secondary">Possession Game: 72</span>
+                                        </div>
+                                        <span class="badge bg-dark">4-2-2-2</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-8">
+                            <h3 class="mb-4" style="margin-top: 2rem;">Long Ball Counter Tactics</h3>
+                            <p>This playstyle focuses on defensive organization and quick transitions using long balls to target forwards. Requires physically strong players with good positioning and heading ability.</p>
+                            
+                            <div class="formation-pitch mt-4">
+                                <div class="pitch-lines">
+                                    <div class="center-circle"></div>
+                                    <div class="center-spot"></div>
+                                </div>
+                                <!-- Formation: 4-3-3 -->
+                                <div class="player-position" style="top: 90%; left: 46%;" data-position="GK" data-requirements="Defensive or Offensive, Gk Awareness: High, Reflexes: 85+, Jumping: 80+"></div>
+                                <div class="player-position" style="top: 70%; left: 16%;" data-position="LB" data-requirements="Speed: 85+, Stamina: 80+, Defensive Awareness: 75+, Crossing: 75+"></div>
+                                <div class="player-position" style="top: 75%; left: 36%;" data-position="CB" data-requirements="Defensive Awareness: 85+, Physical Contact: 80+, Speed: 75+"></div>
+                                <div class="player-position" style="top: 75%; left: 56%;" data-position="CB" data-requirements="Defensive Awareness: 85+, Physical Contact: 80+, Speed: 75+"></div>
+                                <div class="player-position" style="top: 70%; left: 76%;" data-position="RB" data-requirements="Speed: 85+, Stamina: 80+, Defensive Awareness: 75+, Crossing: 75+"></div>
+                                <div class="player-position" style="top: 60%; left: 56%;" data-position="DMF" data-requirements="Stamina: 85+, Ball Winning: 80+, Passing: 75+"></div>
+                                <div class="player-position" style="top: 60%; left: 36%;" data-position="CMF" data-requirements="Passing: 85+, Dribbling: 80+, Stamina: 80+"></div>
+                                <div class="player-position" style="top: 36%; left: 66%;" data-position="AMF" data-requirements="Stamina: 85+, Ball Winning: 80+, Passing: 75+"></div>
+                                <div class="player-position" style="top: 36%; left: 26%;" data-position="AMF" data-requirements="Speed: 90+, Acceleration: 90+, Dribbling: 85+, Finishing: 80+"></div>
+                                <div class="player-position" style="top: 13%; left: 36%;" data-position="CF" data-requirements="Speed: 85+, Finishing: 85+, Physical Contact: 80+, Heading: 75+"></div>
+                                <div class="player-position" style="top: 13%; left: 56%;" data-position="CF" data-requirements="Speed: 90+, Acceleration: 90+, Dribbling: 85+, Finishing: 80+"></div>
+                            </div>
+                            
+                            <div class="player-role mt-4">
+                                <h5>Key Player Requirements</h5>
+                                <div>
+                                    <span class="skill-badge">Physical Contact 80+</span>
+                                    <span class="skill-badge">Heading 80+</span>
+                                    <span class="skill-badge">Long Balls 80+</span>
+                                    <span class="skill-badge">Defensive Awareness 80+</span>
+                                    <span class="skill-badge">Stamina 80+</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-4">
+                                <h4>Recommended Players</h4>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="bg-gray p-3 rounded mb-3">
+                                            <h6>CF: Erling Haaland</h6>
+                                            <p>Physical: 94, Heading: 88, Finishing: 92</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="bg-gray p-3 rounded mb-3">
+                                            <h6>AM: Kaka</h6>
+                                            <p>Ball Control: 93, Passing: 91, Dribbling: 90</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="bg-gray p-3 rounded mb-3">
+                                            <h6>CB: Virgil van Dijk</h6>
+                                            <p>Defensive Awareness: 92, Heading: 90, Physical: 89</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-4">
+                                <h4>Tactical Instructions</h4>
+                                <ul>
+                                    <li>Quick transitions using long passes after winning possession</li>
+                                    <li>Short build-ups and, focuses on direct play to forwards</li>
+                                    <li>Mid Block defense with a compact shape to absorb pressure</li>
+                                    <li>Flexible positioning allows fluid movement during attacks</li>
+                                    <li>Best with fast strikers and accurate long-pass players</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Possession Game -->
+                <div class="tab-pane fade" id="possession" role="tabpanel" aria-labelledby="possession-tab">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="manager-card">
+                                <img src="images/rijkaard.jpg" alt="Manager" class="manager-img">
+                                <div class="p-4">
+                                    <h3>Frank Rijkaard</h3>
+                                    <p class="text-primary">Possession Game Master</p>
+                                    <p>Focus on ball retention, positional play, and creating numerical superiority.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <span class="badge bg-primary me-2">Possession Game: 88</span>
+                                            <span class="badge bg-secondary">Long Ball Counter: 88</span>
+                                        </div>
+                                        <span class="badge bg-dark">4-1-2-3</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-8">
+                            <h3 class="mb-4" style="margin-top: 2rem;">Possession Game Tactics</h3>
+                            <p>The Possession Game playstyle focuses on maintaining control of the ball, patient build-up play, and creating chances through positional superiority. Requires players with excellent technical skills.</p>
+                            
+                            <div class="formation-pitch mt-4">
+                                <div class="pitch-lines">
+                                    <div class="center-circle"></div>
+                                    <div class="center-spot"></div>
+                                </div>
+                                <!-- Formation: 4-3-3 -->
+                                <div class="player-position" style="top: 90%; left: 46%;" data-position="GK" data-requirements="Defensive or Offensive, GK Awareness: High, Reflexes: 85+, Jumping: 80+"></div>
+                                <div class="player-position" style="top: 70%; left: 16%;" data-position="LB" data-requirements="Speed: 85+, Stamina: 80+, Defensive Awareness: 75+, Crossing: 75+"></div>
+                                <div class="player-position" style="top: 75%; left: 36%;" data-position="CB" data-requirements="Defensive Awareness: 85+, Physical Contact: 80+, Speed: 75+"></div>
+                                <div class="player-position" style="top: 75%; left: 56%;" data-position="CB" data-requirements="Defensive Awareness: 85+, Physical Contact: 80+, Speed: 75+"></div>
+                                <div class="player-position" style="top: 70%; left: 76%;" data-position="RB" data-requirements="Speed: 85+, Stamina: 80+, Defensive Awareness: 75+, Crossing: 75+"></div>
+                                <div class="player-position" style="top: 40%; left: 26%;" data-position="AMF" data-requirements="Stamina: 85+, Ball Control: 80+, Passing: 75+"></div>
+                                <div class="player-position" style="top: 55%; left: 46%;" data-position="DMF" data-requirements="Passing: 85+, Defensive Engagement: 80+, Stamina: 80+"></div>
+                                <div class="player-position" style="top: 40%; left: 66%;" data-position="AMF" data-requirements="Stamina: 85+, Ball Control: 80+, Passing: 75+"></div>
+                                <div class="player-position" style="top: 13%; left: 16%;" data-position="LWF" data-requirements="Speed: 90+, Acceleration: 90+, Dribbling: 85+, Finishing: 80+"></div>
+                                <div class="player-position" style="top: 10%; left: 46%;" data-position="CF" data-requirements="Speed: 85+, Finishing: 85+, Physical Contact: 80+, Heading: 75+"></div>
+                                <div class="player-position" style="top: 13%; left: 76%;" data-position="RWF" data-requirements="Speed: 90+, Acceleration: 90+, Dribbling: 85+, Finishing: 80+"></div>
+                            </div>
+                            
+                            <div class="player-role mt-4">
+                                <h5>Key Player Requirements</h5>
+                                <div>
+                                    <span class="skill-badge">Ball Control 85+</span>
+                                    <span class="skill-badge">Passing 85+</span>
+                                    <span class="skill-badge">Dribbling 80+</span>
+                                    <span class="skill-badge">Vision 80+</span>
+                                    <span class="skill-badge">Offensive Awareness 80+</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-4">
+                                <h4>Recommended Players</h4>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="bg-gray p-3 rounded mb-3">
+                                            <h6>CF: Lionel Messi</h6>
+                                            <p>Dribbling: 97, Ball Control: 96, Passing: 90</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="bg-gray p-3 rounded mb-3">
+                                            <h6>AMF: Kaka</h6>
+                                            <p>Passing: 93, Dribbling: 90+, Kicking Power: 90</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="bg-gray p-3 rounded mb-3">
+                                            <h6>DMF: Rodri</h6>
+                                            <p>Passing: 86, Defensive Awareness: 88, Physical: 86</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-4">
+                                <h4>Tactical Instructions</h4>
+                                <ul>
+                                    <li>Short, controlled passes to maintain possession</li>
+                                    <li>Players stay close for passing options</li>
+                                    <li>High pressing to recover the ball quickly</li>
+                                    <li>Emphasis on slow buildup and movement</li>
+                                    <li>Requires technical, high passing players</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Out Wide -->
+                <div class="tab-pane fade" id="out-wide" role="tabpanel" aria-labelledby="out-wide-tab">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="manager-card">
+                                <img src="images/vieira.jpg" alt="Manager" class="manager-img">
+                                <div class="p-4">
+                                    <h3>Patrick Vieira</h3>
+                                    <p class="text-primary">Out Wide Specialist</p>
+                                    <p>Focus on wing play with overlapping fullbacks and crosses into the box.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <span class="badge bg-primary me-2">Out Wide: 88</span>
+                                            <span class="badge bg-secondary">Long Ball: 88</span>
+                                        </div>
+                                        <span class="badge bg-dark">3-1-3-3</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-8">
+                            <h3 class="mb-4" style="margin-top: 2rem;">Out Wide Tactics</h3>
+                            <p>This playstyle focuses on creating chances through wing play, with overlapping fullbacks and crosses into the box. Requires players with excellent crossing ability and strong aerial presence.</p>
+                            
+                            <div class="formation-pitch mt-4">
+                                <div class="pitch-lines">
+                                    <div class="center-circle"></div>
+                                    <div class="center-spot"></div>
+                                </div>
+                                <!-- Formation: 4-3-3 -->
+                                <div class="player-position" style="top: 90%; left: 46%;" data-position="GK" data-requirements="Offensive Awareness: Low, Defensive Engagement: High, Reflexes: 85+, Jumping: 80+"></div>
+                                <div class="player-position" style="top: 75%; left: 26%;" data-position="CB" data-requirements="Defensive Awareness: 85+, Physical Contact: 80+, Speed: 75+"></div>
+                                <div class="player-position" style="top: 75%; left: 46%;" data-position="CB" data-requirements="Defensive Awareness: 85+, Physical Contact: 80+, Speed: 75+"></div>
+                                <div class="player-position" style="top: 75%; left: 66%;" data-position="CB" data-requirements="Defensive Awareness: 85+, Physical Contact: 80+, Speed: 75+"></div>
+                                <div class="player-position" style="top: 40%; left: 76%;" data-position="RMF" data-requirements="Speed: 85+, Stamina: 80+, Dribbling: 75+, Passing: 75+"></div>
+                                <div class="player-position" style="top: 40%; left: 16%;" data-position="LMF" data-requirements="Speed: 85+, Stamina: 80+, Dribbling: 75+, Passing: 75+"></div>
+                                <div class="player-position" style="top: 60%; left: 46%;" data-position="DMF" data-requirements="Passing: 85+, Dribbling: 80+, Stamina: 80+"></div>
+                                <div class="player-position" style="top: 45%; left: 46%;" data-position="CMF" data-requirements="Stamina: 85+, Ball Control: 80+, Passing: 75+"></div>
+                                <div class="player-position" style="top: 13%; left: 16%;" data-position="LWF" data-requirements="Speed: 90+, Acceleration: 90+, Dribbling: 85+, Finishing: 80+"></div>
+                                <div class="player-position" style="top: 10%; left: 46%;" data-position="CF" data-requirements="Speed: 85+, Finishing: 85+, Physical Contact: 80+, Heading: 75+"></div>
+                                <div class="player-position" style="top: 13%; left: 76%;" data-position="RWF" data-requirements="Speed: 90+, Acceleration: 90+, Dribbling: 85+, Finishing: 80+"></div>
+                            </div>
+                            
+                            <div class="player-role mt-4">
+                                <h5>Key Player Requirements</h5>
+                                <div>
+                                    <span class="skill-badge">Passing 85+</span>
+                                    <span class="skill-badge">Heading 85+</span>
+                                    <span class="skill-badge">Stamina 80+</span>
+                                    <span class="skill-badge">Physical Contact 80+</span>
+                                    <span class="skill-badge">Finishing 80+</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-4">
+                                <h4>Recommended Players</h4>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="bg-gray p-3 rounded mb-3">
+                                            <h6>CF: Cristanio Ronaldo</h6>
+                                            <p>Heading: 95, Finishing: 96, Physical: 86</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="bg-gray p-3 rounded mb-3">
+                                            <h6>RMF: Trent Alexander-Arnold</h6>
+                                            <p>Crossing: 93, Passing: 90, Long Balls: 91</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="bg-gray p-3 rounded mb-3">
+                                            <h6>LMF: Theo Hernández</h6>
+                                            <p>Speed: 90, Crossing: 82, Stamina: 85</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-4">
+                                <h4>Tactical Instructions</h4>
+                                <ul>
+                                    <li>Focuses on wing play and crossing</li>
+                                    <li>Full-backs and wide forwards overlap often</li>
+                                    <li>Ideal for exploiting wide areas of the pitch</li>
+                                    <li>Suits fast wingers and aerial strikers</li>
+                                    <li>Builds play through the flanks, not the center</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Long Ball -->
+                <div class="tab-pane fade" id="long-ball-attack" role="tabpanel" aria-labelledby="long-ball-attack-tab">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="manager-card">
+                                <img src="images/vieira.jpg" alt="Manager" class="manager-img">
+                                <div class="p-4">
+                                    <h3>Patrick Vieira</h3>
+                                    <p class="text-primary">Long Ball Expert</p>
+                                    <p>Direct play with emphasis on physicality and set pieces.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <span class="badge bg-primary me-2">Long Ball: 88</span>
+                                            <span class="badge bg-secondary">Out Wide: 88</span>
+                                        </div>
+                                        <span class="badge bg-dark">4-2-2-2</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-8">
+                            <h3 class="mb-4" style="margin-top: 2rem;">Long Ball Tactics</h3>
+                            <p>This playstyle focuses on direct play, bypassing midfield with long balls to target forwards. Requires physically strong players with good aerial ability and positioning.</p>
+                            
+                            <div class="formation-pitch mt-4">
+                                <div class="pitch-lines">
+                                    <div class="center-circle"></div>
+                                    <div class="center-spot"></div>
+                                </div>
+                                <!-- Formation: 4-3-3 -->
+                                <div class="player-position" style="top: 90%; left: 46%;" data-position="GK" data-requirements="Defensive or Offensive, Gk Awareness: High, Reflexes: 85+, Jumping: 80+"></div>
+                                <div class="player-position" style="top: 70%; left: 16%;" data-position="LB" data-requirements="Speed: 85+, Stamina: 80+, Defensive Awareness: 75+, Crossing: 75+"></div>
+                                <div class="player-position" style="top: 75%; left: 36%;" data-position="CB" data-requirements="Defensive Awareness: 85+, Physical Contact: 80+, Speed: 75+"></div>
+                                <div class="player-position" style="top: 75%; left: 56%;" data-position="CB" data-requirements="Defensive Awareness: 85+, Physical Contact: 80+, Speed: 75+"></div>
+                                <div class="player-position" style="top: 70%; left: 76%;" data-position="RB" data-requirements="Speed: 85+, Stamina: 80+, Defensive Awareness: 75+, Crossing: 75+"></div>
+                                <div class="player-position" style="top: 60%; left: 56%;" data-position="DMF" data-requirements="Stamina: 85+, Ball Winning: 80+, Passing: 75+"></div>
+                                <div class="player-position" style="top: 60%; left: 36%;" data-position="CMF" data-requirements="Passing: 85+, Dribbling: 80+, Stamina: 80+"></div>
+                                <div class="player-position" style="top: 36%; left: 66%;" data-position="AMF" data-requirements="Stamina: 85+, Ball Winning: 80+, Passing: 75+"></div>
+                                <div class="player-position" style="top: 36%; left: 26%;" data-position="AMF" data-requirements="Speed: 90+, Acceleration: 90+, Dribbling: 85+, Finishing: 80+"></div>
+                                <div class="player-position" style="top: 13%; left: 36%;" data-position="CF" data-requirements="Speed: 85+, Finishing: 85+, Physical Contact: 80+, Heading: 75+"></div>
+                                <div class="player-position" style="top: 13%; left: 56%;" data-position="CF" data-requirements="Speed: 90+, Acceleration: 90+, Dribbling: 85+, Finishing: 80+"></div>
+                            </div>
+                            
+                            <div class="player-role mt-4">
+                                <h5>Key Player Requirements</h5>
+                                <div>
+                                    <span class="skill-badge">Heading 85+</span>
+                                    <span class="skill-badge">Physical Contact 85+</span>
+                                    <span class="skill-badge">Long Balls 80+</span>
+                                    <span class="skill-badge">Defensive Awareness 80+</span>
+                                    <span class="skill-badge">Kicking Power 80+</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-4">
+                                <h4>Recommended Players</h4>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="bg-gray p-3 rounded mb-3">
+                                            <h6>CF: Olivier Giroud</h6>
+                                            <p>Heading: 89, Physical: 84, Finishing: 85</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="bg-gray p-3 rounded mb-3">
+                                            <h6>CB: Rúben Dias</h6>
+                                            <p>Defensive Awareness: 90, Heading: 86, Physical: 86</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="bg-gray p-3 rounded mb-3">
+                                            <h6>DMF: Declan Rice</h6>
+                                            <p>Physical: 86, Ball Control: 85, Long Balls: 82</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-4">
+                                <h4>Tactical Instructions</h4>
+                                <ul>
+                                    <li>Fast counterattacks using long passes</li>
+                                    <li>Skips midfield; targets strikers directly</li>
+                                    <li>Flexible positioning for dynamic movement</li>
+                                    <li>Mid block defense for absorbing pressure</li>
+                                    <li>Works best with fast attackers and good long passers</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h4 class="mb-4">VaKKoTTy Gaming</h4>
+                    <p>Your ultimate resource for competitive eFootball gameplay, strategies, and player development.</p>
+                    <div class="mt-4">
+                        <a href="https://www.youtube.com/@VaKKoTTy_Gaming" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/vakkotty_gaming/" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="https://discord.gg/8WMPvuQY" class="social-icon"><i class="fab fa-discord"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="mb-4">Quick Links</h5>
+                    <div class="footer-links">
+                        <a href="index.html">Home</a>
+                        <a href="progressions.html">Player Progressions</a>
+                        <a href="managers.html">Tatics</a>
+                        <a href="gallery.html">Gallery</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="mb-4">Community</h5>
+                    <div class="footer-links">
+                        <a href="https://www.whatsapp.com/channel/0029Vb6DTQI6buMQaym2Y03U" target="_blank">Whatsapp Channel</a>
+                        <a href="https://chat.whatsapp.com/L62uwnvKNHcIfrcbaktNgF" target="_blank">Whatsapp Group</a>
+                        <a href="https://discord.gg/8WMPvuQY" target="_blank">Discord</a>
+                        <a href="https://www.instagram.com/vakkotty_gaming/" target="_blank">Instagram</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="mb-4">Resources</h5>
+                    <div class="footer-links">
+                        <a href="https://youtu.be/m66irVaIbCg?si=v_CxtugR8PB03nk3">Tutorials</a>
+                        <a href="https://www.konami.com/efootball/en/">Game Updates</a>
+                        <a href="https://efootballhub.net/">Player Database</a>
+                        <a href="https://www.youtube.com/@VaKKoTTy_Gaming/shorts">Shorts</a>
+                        <a href="https://www.youtube.com/@VaKKoTTy_Gaming/streams">Live Streams</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="mb-4">Updates</h5>
+                    <p>Subscribe for the latest tips and updates.</p>
+                    <form class="mt-3">
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control bg-dark border-dark" placeholder="Your Email">
+                            <button class="btn btn-primary" type="submit">
+                                <a href="https://www.youtube.com/@VaKKoTTy_Gaming/featured">Subscribe</a>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center copyright">
+                    <p class="mb-0">&copy; 2025 VaKKoTTy Gaming. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS animation
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Theme toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const htmlElement = document.documentElement;
+        
+        // Check for saved theme preference or use preferred color scheme
+        const savedTheme = localStorage.getItem('theme') || 
+                          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        htmlElement.setAttribute('data-bs-theme', savedTheme);
+        
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-bs-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            htmlElement.setAttribute('data-bs-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+
+        // Position tooltips for formation
+        document.querySelectorAll('.player-position').forEach(position => {
+            position.addEventListener('mouseenter', function() {
+                const tooltip = document.createElement('div');
+                tooltip.className = 'position-tooltip';
+                tooltip.innerHTML = `
+                    <h6>${this.getAttribute('data-position')}</h6>
+                    <p>${this.getAttribute('data-requirements')}</p>
+                `;
+                this.appendChild(tooltip);
+                tooltip.style.display = 'block';
+                
+                // Position tooltip
+                const rect = this.getBoundingClientRect();
+                if (rect.top < window.innerHeight / 2) {
+                    tooltip.style.top = '100%';
+                    tooltip.style.left = '50%';
+                    tooltip.style.transform = 'translateX(-50%)';
+                } else {
+                    tooltip.style.bottom = '100%';
+                    tooltip.style.left = '50%';
+                    tooltip.style.transform = 'translateX(-50%)';
+                }
+            });
+            
+            position.addEventListener('mouseleave', function() {
+                const tooltip = this.querySelector('.position-tooltip');
+                if (tooltip) {
+                    tooltip.remove();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

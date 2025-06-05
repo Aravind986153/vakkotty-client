@@ -1,0 +1,3435 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <!-- Google Adsense -->
+     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2067618612606246"
+     crossorigin="anonymous"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VaKKoTTy Gaming | Player Progressions</title>
+    <!-- Bootstrap 5.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Oxanium:wght@400;700&display=swap" rel="stylesheet">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FF6B00;
+            --primary-dark: #E05D00;
+            --secondary: #00A8E8;
+            --dark: #121212;
+            --light: #F8F9FA;
+            --gray: #2D2D2D;
+            --light-gray: #E0E0E0;
+        }
+
+        body {
+            font-family: 'Oxanium', sans-serif;
+            background-color: var(--dark);
+            color: var(--light);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        .navbar {
+            background-color: rgba(18, 18, 18, 0.9) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 107, 0, 0.3);
+        }
+
+        .navbar-brand {
+            font-weight: 900;
+            font-size: 1.8rem;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .nav-link {
+            color: var(--light) !important;
+            font-weight: 500;
+            margin: 0 10px;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--primary) !important;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary);
+            transition: width 0.3s;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            color: white;
+            font-weight: 600;
+            padding: 10px 25px;
+            border-radius: 50px;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            border-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 107, 0, 0.3);
+        }
+
+        .btn-outline-primary {
+            border-color: var(--primary);
+            color: var(--primary);
+            font-weight: 600;
+            padding: 10px 25px;
+            border-radius: 50px;
+            transition: all 0.3s;
+        }
+
+        .btn-outline-primary:hover {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 107, 0, 0.3);
+        }
+
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 50px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 4px;
+            bottom: -10px;
+            left: 0;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+
+        .hero-section {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+        }
+
+        .hero-content {
+            z-index: 2;
+            position: relative;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            color: white;
+        }
+
+        .player-card {
+            background-color: var(--gray);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        .player-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            border-color: var(--primary);
+        }
+
+        .player-image {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .player-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .player-card:hover .player-image img {
+            transform: scale(1.05);
+        }
+
+        .player-position {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background-color: var(--primary);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .player-info {
+            padding: 20px;
+        }
+
+        .player-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .player-team {
+            color: var(--light-gray);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .player-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--primary);
+        }
+
+        .stat-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            opacity: 0.7;
+        }
+
+        .player-progressions {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+            background-color: rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .player-progressions.active {
+            max-height: 1000px;
+            padding: 20px;
+        }
+
+        .progression-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            gap: 20px;
+        }
+
+        .progression-image {
+            width: fit-content;
+            height: fit-content;
+            border-radius: 10px;
+            overflow: hidden;
+            flex-shrink: 0;
+            border: 3px solid var(--primary);
+        }
+
+        .progression-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        
+
+        .progression-title h4 {
+            margin-bottom: 5px;
+            color: var(--primary);
+        }
+
+        .progression-title .player-team {
+            color: var(--light-gray);
+            font-size: 0.9rem;
+        }
+
+        .progression-stats {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .progression-stat {
+            text-align: center;
+        }
+
+        .progression-stat-value {
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .progression-stat-label {
+            font-size: 0.7rem;
+            opacity: 0.7;
+        }
+
+        .level-title {
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .level-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .stat-pill {
+            background-color: rgba(255, 107, 0, 0.2);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        .search-container {
+            background-color: var(--gray);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+        }
+
+        .position-filter {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .position-btn {
+            background-color: var(--dark);
+            border: 1px solid var(--gray);
+            color: var(--light);
+            padding: 5px 15px;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+
+        .position-btn:hover, .position-btn.active {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            color: white;
+        }
+
+        .footer {
+            background-color: var(--gray);
+            padding: 50px 0 20px;
+        }
+
+        .footer-links a {
+            color: var(--light);
+            text-decoration: none;
+            transition: color 0.3s;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            margin-top: 30px;
+        }
+
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background-color: var(--gray);
+            color: var(--light);
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: all 0.3s;
+        }
+
+        .social-icon:hover {
+            background-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        /* Dark/Light Mode Toggle */
+        .theme-toggle {
+            width: 50px;
+            height: 25px;
+            background-color: var(--gray);
+            border-radius: 50px;
+            position: relative;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            display: flex;
+            align-items: center;
+            padding: 0 5px;
+        }
+
+        .theme-toggle i {
+            font-size: 12px;
+            color: var(--light);
+            transition: all 0.3s;
+        }
+
+        .theme-toggle .sun {
+            opacity: 0;
+            transform: translateX(-10px);
+        }
+
+        .theme-toggle .moon {
+            opacity: 1;
+            transform: translateX(10px);
+        }
+
+        [data-bs-theme="light"] .theme-toggle .sun {
+            opacity: 1;
+            transform: translateX(10px);
+            color: var(--dark);
+        }
+
+        [data-bs-theme="light"] .theme-toggle .moon {
+            opacity: 0;
+            transform: translateX(-10px);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--gray);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-dark);
+        }
+
+        /* Light Mode Styles */
+        [data-bs-theme="light"] body {
+            background-color: var(--light);
+            color: var(--dark);
+        }
+
+        [data-bs-theme="light"] .navbar {
+            background-color: rgba(248, 249, 250, 0.9) !important;
+            border-bottom: 1px solid rgba(0, 168, 232, 0.3);
+        }
+
+        [data-bs-theme="light"] .nav-link {
+            color: var(--dark) !important;
+        }
+
+        [data-bs-theme="light"] .player-card {
+            background-color: #e0e0e0;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        [data-bs-theme="light"] .player-team {
+            color: var(--gray);
+        }
+
+        [data-bs-theme="light"] .player-card:hover {
+            border-color: var(--secondary);
+        }
+        
+        [data-bs-theme="light"] .search-container {
+            background-color: #e0e0e0;
+        }
+        
+
+
+        [data-bs-theme="light"] .footer {
+            background-color: #f1f1f1;
+        }
+
+        [data-bs-theme="light"] .footer-links a {
+            color: var(--dark);
+        }
+
+        [data-bs-theme="light"] .copyright {
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        [data-bs-theme="light"] .social-icon {
+            background-color: #e0e0e0;
+            color: var(--dark);
+        }
+
+        [data-bs-theme="light"] .position-btn {
+            background-color: #e0e0e0;
+            color: var(--dark);
+        }
+
+        [data-bs-theme="light"] .position-btn:hover, 
+        [data-bs-theme="light"] .position-btn.active {
+            background-color: var(--secondary);
+            border-color: var(--secondary);
+            color: white;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+        }
+    </style>
+    
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">VaKKoTTy Gaming</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="progressions.html">Player Progressions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="managers.html">Tatics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <button class="btn btn-outline-primary" onclick="window.open('https://www.youtube.com/@VaKKoTTy_Gaming')">
+                            <i class="fab fa-youtube me-2"></i>YouTube
+                        </button>
+                    </li>
+                    <li class="nav-item ms-lg-2 d-flex align-items-center">
+                        <button class="theme-toggle" id="themeToggle">
+                            <i class="fas fa-sun sun"></i>
+                            <i class="fas fa-moon moon"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 hero-content">
+                    <h1 class="hero-title">Player Progressions Hub</h1>
+                    <p class="hero-subtitle">Custom development paths for eFootball players to maximize their potential</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="https://www.whatsapp.com/channel/0029Vb6DTQI6buMQaym2Y03U" class="btn btn-primary">
+                            <i class="fas fa-users me-2"></i> Whatsapp Channel
+                        </a>
+                        <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#progressGuideModal">
+                            <i class="fas fa-book me-2"></i> Progression Guide
+                        </button>
+                        <a href="contact.html" class="btn btn-primary">
+                            <i class="fas fa-message"></i> Request Progression
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search and Filter Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="search-container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4 class="mb-3">Search Players</h4>
+                        <div class="input-group">
+                            <input type="text" class="form-control bg-dark border-dark text-light" id="playerSearch" placeholder="Search by player name...">
+                            <button class="btn btn-primary" type="button">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h4 class="mb-3">Filter by Position</h4>
+                        <div class="position-filter">
+                            <button class="position-btn active" data-position="all">All</button>
+                            <button class="position-btn" data-position="gk">GoalKeeper</button>
+                            <button class="position-btn" data-position="df">Defence</button>
+                            <button class="position-btn" data-position="mf">Mid-field</button>
+                            <button class="position-btn" data-position="fw">Forward</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Players Grid Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row" id="playersContainer">
+                <!-- Player cards will be dynamically inserted here -->
+                
+                <!-- Forwards -->
+    <div class="col-md-6 col-lg-4 col-xl-3" data-position="fw">
+        <div class="player-card">
+            <div class="player-image">
+                <img src="images/pp.jpg" alt="Suarez">
+                <div class="player-position">CF</div>
+            </div>
+            <div class="player-info">
+                <h4 class="player-name">Luis Suarez</h4>
+                <p class="player-team">Barcelona</p>
+                <div class="player-stats">
+                    <div class="stat-item">
+                        <div class="stat-value">98</div>
+                        <div class="stat-label">KP</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">94</div>
+                        <div class="stat-label">FIN</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">96</div>
+                        <div class="stat-label">ACC</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">89</div>
+                        <div class="stat-label">PHY</div>
+                    </div>
+                </div>
+            </div>
+            <div class="player-progressions">
+                <div class="progression-header">
+                    <div class="progression-image">
+                        <img src="images/dbsuarez.jpg" alt="Suarez">
+                    </div>
+                </div>
+                <div class="progression-level">
+                    <div class="level-title">
+                        <span>Added Skills</span>
+                        <span>CF</span>
+                    </div>
+                    <div class="level-stats">
+                        <span class="stat-pill">Double Touch</span>
+                        <span class="stat-pill">Heading</span>
+                        <span class="stat-pill">Dipping Shot</span>
+                        <span class="stat-pill">One Touch Pass</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-lg-4 col-xl-3" data-position="fw">
+        <div class="player-card">
+            <div class="player-image">
+                <img src="images/pp.jpg" alt="Fernando Torres">
+                <div class="player-position">CF</div>
+            </div>
+            <div class="player-info">
+                <h4 class="player-name">Fernando Torres</h4>
+                <p class="player-team">Spain</p>
+                <div class="player-stats">
+                    <div class="stat-item">
+                        <div class="stat-value">94</div>
+                        <div class="stat-label">SPD</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">93</div>
+                        <div class="stat-label">FIN</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">94</div>
+                        <div class="stat-label">ACC</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">85</div>
+                        <div class="stat-label">PHY</div>
+                    </div>
+                </div>
+            </div>
+            <div class="player-progressions">
+                <div class="progression-header">
+                    <div class="progression-image">
+                        <img src="images/dbtorres.jpg" alt="Fernando Torres">
+                    </div>
+                </div>
+                <div class="progression-level">
+                    <div class="level-title">
+                        <span>Added Skills</span>
+                        <span>CF</span>
+                    </div>
+                    <div class="level-stats">
+                        <span class="stat-pill">Outside Curler</span>
+                        <span class="stat-pill">Rising Shot</span>
+                        <span class="stat-pill">Through Pass</span>
+                        <span class="stat-pill">One Touch Pass</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-lg-4 col-xl-3" data-position="fw">
+        <div class="player-card">
+            <div class="player-image">
+                <img src="images/pp.jpg" alt="David Villa">
+                <div class="player-position">CF</div>
+            </div>
+            <div class="player-info">
+                <h4 class="player-name">David Villa</h4>
+                <p class="player-team">Barcelona</p>
+                <div class="player-stats">
+                    <div class="stat-item">
+                        <div class="stat-value">93</div>
+                        <div class="stat-label">KP</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">94</div>
+                        <div class="stat-label">FIN</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">92</div>
+                        <div class="stat-label">ACC</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">95</div>
+                        <div class="stat-label">OFN</div>
+                    </div>
+                </div>
+            </div>
+            <div class="player-progressions">
+                <div class="progression-header">
+                    <div class="progression-image">
+                        <img src="images/dbvilla.jpg" alt="David Villa">
+                    </div>
+                </div>
+                <div class="progression-level">
+                    <div class="level-title">
+                        <span>Added Skills</span>
+                        <span>CF</span>
+                    </div>
+                    <div class="level-stats">
+                        <span class="stat-pill">Outside Curler</span>
+                        <span class="stat-pill">Rising Shot</span>
+                        <span class="stat-pill">Through Pass</span>
+                        <span class="stat-pill">One Touch Pass</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-md-6 col-lg-4 col-xl-3" data-position="fw">
+        <div class="player-card">
+            <div class="player-image">
+                <img src="images/pp.jpg" alt="Kylian Mbappe">
+                <div class="player-position">CF</div>
+            </div>
+            <div class="player-info">
+                <h4 class="player-name">Kylian Mbappe</h4>
+                <p class="player-team">France</p>
+                <div class="player-stats">
+                    <div class="stat-item">
+                        <div class="stat-value">97</div>
+                        <div class="stat-label">SPD</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">94</div>
+                        <div class="stat-label">FIN</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">98</div>
+                        <div class="stat-label">ACC</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">94</div>
+                        <div class="stat-label">OFN</div>
+                    </div>
+                </div>
+            </div>
+            <div class="player-progressions">
+                <div class="progression-header">
+                    <div class="progression-image">
+                        <img src="images/dbmbappe.jpg" alt="Kylian Mbappe">
+                    </div>
+                </div>
+                <div class="progression-level">
+                    <div class="level-title">
+                        <span>Added Skills</span>
+                        <span>CF</span>
+                    </div>
+                    <div class="level-stats">
+                        <span class="stat-pill">Outside Curler</span>
+                        <span class="stat-pill">Rising Shot</span>
+                        <span class="stat-pill">Dipping Shot</span>
+                        <span class="stat-pill">Through Pass</span>
+                        <span class="stat-pill">One Touch Pass</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-lg-4 col-xl-3" data-position="fw">
+        <div class="player-card">
+            <div class="player-image">
+                <img src="images/pp.jpg" alt="Eto">
+                <div class="player-position">CF</div>
+            </div>
+            <div class="player-info">
+                <h4 class="player-name">Samuel Eto'o</h4>
+                <p class="player-team">Barcelona</p>
+                <div class="player-stats">
+                    <div class="stat-item">
+                        <div class="stat-value">91</div>
+                        <div class="stat-label">KP</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">93</div>
+                        <div class="stat-label">FIN</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">100</div>
+                        <div class="stat-label">ACC</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">99</div>
+                        <div class="stat-label">SPD</div>
+                    </div>
+                </div>
+            </div>
+            <div class="player-progressions">
+                <div class="progression-header">
+                    <div class="progression-image">
+                        <img src="images/dbeto.jpg" alt="Eto">
+                    </div>
+                </div>
+                <div class="progression-level">
+                    <div class="level-title">
+                        <span>Added Skills</span>
+                        <span>CF</span>
+                    </div>
+                    <div class="level-stats">
+                        <span class="stat-pill">Long Range Shooting</span>
+                        <span class="stat-pill">Dipping Shot</span>
+                        <span class="stat-pill">Through Pass</span>
+                        <span class="stat-pill">One Touch Pass</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-md-6 col-lg-4 col-xl-3" data-position="fw">
+        <div class="player-card">
+            <div class="player-image">
+                <img src="images/pp.jpg" alt="Lionel Messi">
+                <div class="player-position">RWF</div>
+            </div>
+            <div class="player-info">
+                <h4 class="player-name">Lionel Messi</h4>
+                <p class="player-team">Barcelona</p>
+                <div class="player-stats">
+                    <div class="stat-item">
+                        <div class="stat-value">96</div>
+                        <div class="stat-label">KP</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">99</div>
+                        <div class="stat-label">DBL</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">97</div>
+                        <div class="stat-label">ACC</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">96</div>
+                        <div class="stat-label">CRL</div>
+                    </div>
+                </div>
+            </div>
+            <div class="player-progressions">
+                <div class="progression-header">
+                    <div class="progression-image">
+                        <img src="images/dbmessi.jpg" alt="Lionel Messi">
+                    </div>
+                </div>
+                <div class="progression-level">
+                    <div class="level-title">
+                        <span>Added Skills</span>
+                        <span>RWF</span>
+                    </div>
+                    <div class="level-stats">
+                        <span class="stat-pill">Rising Shot</span>
+                        <span class="stat-pill">Weightend Pass</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-md-6 col-lg-4 col-xl-3" data-position="fw">
+        <div class="player-card">
+            <div class="player-image">
+                <img src="images/pp.jpg" alt="Jamie Vardy">
+                <div class="player-position">CF</div>
+            </div>
+            <div class="player-info">
+                <h4 class="player-name">Jamie Vardy</h4>
+                <p class="player-team">England</p>
+                <div class="player-stats">
+                    <div class="stat-item">
+                        <div class="stat-value">90</div>
+                        <div class="stat-label">KP</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">93</div>
+                        <div class="stat-label">FIN</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">96</div>
+                        <div class="stat-label">ACC</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">97</div>
+                        <div class="stat-label">SPD</div>
+                    </div>
+                </div>
+            </div>
+            <div class="player-progressions">
+                <div class="progression-header">
+                    <div class="progression-image">
+                        <img src="images/dbvardy.jpg" alt="Jamie Vardy">
+                    </div>
+                </div>
+                <div class="progression-level">
+                    <div class="level-title">
+                        <span>Added Skills</span>
+                        <span>CF</span>
+                    </div>
+                    <div class="level-stats">
+                        <span class="stat-pill">Outside Curler</span>
+                        <span class="stat-pill">Double Touch</span>
+                        <span class="stat-pill">Through Pass</span>
+                        <span class="stat-pill">One Touch Pass</span>
+                        <span class="stat-pill">Heading</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-md-6 col-lg-4 col-xl-3" data-position="fw">
+        <div class="player-card">
+            <div class="player-image">
+                <img src="images/pp.jpg" alt="Ruud Gullit">
+                <div class="player-position">SS</div>
+            </div>
+            <div class="player-info">
+                <h4 class="player-name">Ruud Gullit</h4>
+                <p class="player-team">AC Milan</p>
+                <div class="player-stats">
+                    <div class="stat-item">
+                        <div class="stat-value">93</div>
+                        <div class="stat-label">KP</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">93</div>
+                        <div class="stat-label">DBL</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">92</div>
+                        <div class="stat-label">ACC</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">91</div>
+                        <div class="stat-label">SPD</div>
+                    </div>
+                </div>
+            </div>
+            <div class="player-progressions">
+                <div class="progression-header">
+                    <div class="progression-image">
+                        <img src="images/dbgullit.jpg" alt="Ruud Gullit">
+                    </div>
+                </div>
+                <div class="progression-level">
+                    <div class="level-title">
+                        <span>Added Skills</span>
+                        <span>SS</span>
+                    </div>
+                    <div class="level-stats">
+                        <span class="stat-pill">Double Touch</span>
+                        <span class="stat-pill">Rising Shot</span>
+                        <span class="stat-pill">Ariel Superiority</span>
+                        <span class="stat-pill">One Touch Pass</span>
+                        <span class="stat-pill">Long Range Curler</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-md-6 col-lg-4 col-xl-3" data-position="fw">
+        <div class="player-card">
+            <div class="player-image">
+                <img src="images/pp.jpg" alt="Gabriel Batistuta">
+                <div class="player-position">CF</div>
+            </div>
+            <div class="player-info">
+                <h4 class="player-name">Gabriel Batistuta</h4>
+                <p class="player-team">Argentina</p>
+                <div class="player-stats">
+                    <div class="stat-item">
+                        <div class="stat-value">96</div>
+                        <div class="stat-label">KP</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">94</div>
+                        <div class="stat-label">FIN</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">91</div>
+                        <div class="stat-label">ACC</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">95</div>
+                        <div class="stat-label">OFN</div>
+                    </div>
+                </div>
+            </div>
+            <div class="player-progressions">
+                <div class="progression-header">
+                    <div class="progression-image">
+                        <img src="images/dbbatistuta.jpg" alt="Gabriel Batistuta">
+                    </div>
+                </div>
+                <div class="progression-level">
+                    <div class="level-title">
+                        <span>Added Skills</span>
+                        <span>CF</span>
+                    </div>
+                    <div class="level-stats">
+                        <span class="stat-pill">Sole Control</span>
+                        <span class="stat-pill">Rising Shot</span>
+                        <span class="stat-pill">Double Touch</span>
+                        <span class="stat-pill">One Touch Pass</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-md-6 col-lg-4 col-xl-3" data-position="fw">
+        <div class="player-card">
+            <div class="player-image">
+                <img src="images/pp.jpg" alt="Michael Owen">
+                <div class="player-position">CF</div>
+            </div>
+            <div class="player-info">
+                <h4 class="player-name">Michael Owen</h4>
+                <p class="player-team">Manchester United</p>
+                <div class="player-stats">
+                    <div class="stat-item">
+                        <div class="stat-value">91</div>
+                        <div class="stat-label">KP</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">94</div>
+                        <div class="stat-label">FIN</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">94</div>
+                        <div class="stat-label">ACC</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">93</div>
+                        <div class="stat-label">SPD</div>
+                    </div>
+                </div>
+            </div>
+            <div class="player-progressions">
+                <div class="progression-header">
+                    <div class="progression-image">
+                        <img src="images/dbowen.jpg" alt="Michael Owen">
+                    </div>
+                </div>
+                <div class="progression-level">
+                    <div class="level-title">
+                        <span>Added Skills</span>
+                        <span>CF</span>
+                    </div>
+                    <div class="level-stats">
+                        <span class="stat-pill">Double Touch</span>
+                        <span class="stat-pill">Long Range Shooting</span>
+                        <span class="stat-pill">Through Pass</span>
+                        <span class="stat-pill">One Touch Pass</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-md-6 col-lg-4 col-xl-3" data-position="fw">
+        <div class="player-card">
+            <div class="player-image">
+                <img src="images/pp.jpg" alt="K. Heinz Rummenigge">
+                <div class="player-position">CF</div>
+            </div>
+            <div class="player-info">
+                <h4 class="player-name">K. Heinz Rummenigge</h4>
+                <p class="player-team">Germany</p>
+                <div class="player-stats">
+                    <div class="stat-item">
+                        <div class="stat-value">90</div>
+                        <div class="stat-label">KP</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">92</div>
+                        <div class="stat-label">FIN</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">97</div>
+                        <div class="stat-label">ACC</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">99</div>
+                        <div class="stat-label">SPD</div>
+                    </div>
+                </div>
+            </div>
+            <div class="player-progressions">
+                <div class="progression-header">
+                    <div class="progression-image">
+                        <img src="images/dbrummi.jpg" alt="K. Heinz Rummenigge">
+                    </div>
+                </div>
+                <div class="progression-level">
+                    <div class="level-title">
+                        <span>Added Skills</span>
+                        <span>CF</span>
+                    </div>
+                    <div class="level-stats">
+                        <span class="stat-pill">Sole Control</span>
+                        <span class="stat-pill">Dipping Shot</span>
+                        <span class="stat-pill">Through Pass</span>
+                        <span class="stat-pill">One Touch Pass</span>
+                        <span class="stat-pill">Super Sub</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-md-6 col-lg-4 col-xl-3" data-position="fw">
+        <div class="player-card">
+            <div class="player-image">
+                <img src="images/pp.jpg" alt="K. Heinz Rummenigge">
+                <div class="player-position">CF</div>
+            </div>
+            <div class="player-info">
+                <h4 class="player-name">K. Heinz Rummenigge</h4>
+                <p class="player-team">FC Bayern</p>
+                <div class="player-stats">
+                    <div class="stat-item">
+                        <div class="stat-value">91</div>
+                        <div class="stat-label">KP</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">92</div>
+                        <div class="stat-label">FIN</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">97</div>
+                        <div class="stat-label">ACC</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">98</div>
+                        <div class="stat-label">SPD</div>
+                    </div>
+                </div>
+            </div>
+            <div class="player-progressions">
+                <div class="progression-header">
+                    <div class="progression-image">
+                        <img src="images/dbrummi2.jpg" alt="K. Heinz Rummenigge">
+                    </div>
+                </div>
+                <div class="progression-level">
+                    <div class="level-title">
+                        <span>Added Skills</span>
+                        <span>CF</span>
+                    </div>
+                    <div class="level-stats">
+                        <span class="stat-pill">Sole Control</span>
+                        <span class="stat-pill">Dipping Shot</span>
+                        <span class="stat-pill">Through Pass</span>
+                        <span class="stat-pill">One Touch Pass</span>
+                        <span class="stat-pill">Super Sub/Ariel Superiority</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-md-6 col-lg-4 col-xl-3" data-position="fw">
+        <div class="player-card">
+            <div class="player-image">
+                <img src="images/pp.jpg" alt="Son Heung-min">
+                <div class="player-position">CF</div>
+            </div>
+            <div class="player-info">
+                <h4 class="player-name">Son Heung-min</h4>
+                <p class="player-team">Korean Republic</p>
+                <div class="player-stats">
+                    <div class="stat-item">
+                        <div class="stat-value">93</div>
+                        <div class="stat-label">KP</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">93</div>
+                        <div class="stat-label">FIN</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">95</div>
+                        <div class="stat-label">ACC</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">95</div>
+                        <div class="stat-label">CRL</div>
+                    </div>
+                </div>
+            </div>
+            <div class="player-progressions">
+                <div class="progression-header">
+                    <div class="progression-image">
+                        <img src="images/dbson.jpg" alt="Son Heung-min">
+                    </div>
+                </div>
+                <div class="progression-level">
+                    <div class="level-title">
+                        <span>Added Skills</span>
+                        <span>CF</span>
+                    </div>
+                    <div class="level-stats">
+                        <span class="stat-pill">Outside Curler</span>
+                        <span class="stat-pill">Dipping Shot/Super Sub</span>
+                        <span class="stat-pill">Through Pass</span>
+                        <span class="stat-pill">One Touch Pass</span>
+                        <span class="stat-pill">Rising Shot</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                <!-- Mid-Fielders -->
+                
+                <div class="col-md-6 col-lg-4 col-xl-3" data-position="mf">
+                    <div class="player-card">
+                        <div class="player-image">
+                            <img src="images/pp.jpg" alt="Declan Rice">
+                            <div class="player-position">DMF</div>
+                        </div>
+                        <div class="player-info">
+                            <h4 class="player-name">Declan Rice</h4>
+                            <p class="player-team">England</p>
+                            <div class="player-stats">
+                                <div class="stat-item">
+                                    <div class="stat-value">91</div>
+                                    <div class="stat-label">KP</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">97</div>
+                                    <div class="stat-label">DEN</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">93</div>
+                                    <div class="stat-label">DAW</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">94</div>
+                                    <div class="stat-label">STA</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="player-progressions">
+                <div class="progression-header">
+                    <div class="progression-image">
+                        <img src="images/dbrice_dmf.jpg" alt="Declan Rice">
+                    </div>
+                </div>
+                <div class="progression-level">
+                    <div class="level-title">
+                        <span>Added Skills</span>
+                        <span>DMF</span>
+                    </div>
+                    <div class="level-stats">
+                        <span class="stat-pill">Sliding Tackle</span>
+                        <span class="stat-pill">Weighted Pass</span>
+                        <span class="stat-pill">Outside Curler</span>
+                        <span class="stat-pill">Ariel Superiority</span>
+                        <span class="stat-pill">Heading/Acrobatic Clearance</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    <div class="col-md-6 col-lg-4 col-xl-3" data-position="mf">
+                    <div class="player-card">
+                        <div class="player-image">
+                            <img src="images/pp.jpg" alt="Declan Rice">
+                            <div class="player-position">CMF</div>
+                        </div>
+                        <div class="player-info">
+                            <h4 class="player-name">Declan Rice</h4>
+                            <p class="player-team">England</p>
+                            <div class="player-stats">
+                                <div class="stat-item">
+                                    <div class="stat-value">91</div>
+                                    <div class="stat-label">KP</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">93</div>
+                                    <div class="stat-label">DEN</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">88</div>
+                                    <div class="stat-label">BCL</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">94</div>
+                                    <div class="stat-label">STA</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="player-progressions">
+                <div class="progression-header">
+                    <div class="progression-image">
+                        <img src="images/dbrice_cmf1.jpg" alt="Declan Rice">
+                    </div>
+                </div>
+                <div class="progression-level">
+                    <div class="level-title">
+                        <span>Added Skills</span>
+                        <span>CMF</span>
+                    </div>
+                    <div class="level-stats">
+                        <span class="stat-pill">Sliding Tackle</span>
+                        <span class="stat-pill">Weighted Pass</span>
+                        <span class="stat-pill">Outside Curler</span>
+                        <span class="stat-pill">Ariel Superiority</span>
+                        <span class="stat-pill">Heading/Acrobatic Clearance</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+                    
+
+                    <div class="col-md-6 col-lg-4 col-xl-3" data-position="mf">
+                    <div class="player-card">
+                        <div class="player-image">
+                            <img src="images/pp.jpg" alt="Rafael Leao">
+                            <div class="player-position">LMF</div>
+                        </div>
+                        <div class="player-info">
+                            <h4 class="player-name">Rafael Leao</h4>
+                            <p class="player-team">Portugal</p>
+                            <div class="player-stats">
+                                <div class="stat-item">
+                                    <div class="stat-value">90</div>
+                                    <div class="stat-label">KP</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">99</div>
+                                    <div class="stat-label">DBL</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">95</div>
+                                    <div class="stat-label">BCL</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">99</div>
+                                    <div class="stat-label">SPD</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="player-progressions">
+                <div class="progression-header">
+                    <div class="progression-image">
+                        <img src="images/dbleao.jpg" alt="Rafael Leao">
+                    </div>
+                </div>
+                <div class="progression-level">
+                    <div class="level-title">
+                        <span>Added Skills</span>
+                        <span>LMF</span>
+                    </div>
+                    <div class="level-stats">
+                        <span class="stat-pill">Long Range Shooting</span>
+                        <span class="stat-pill">First Time Shot</span>
+                        <span class="stat-pill">Outside Curler</span>
+                        <span class="stat-pill">Pin Point Crossing</span>
+                        <span class="stat-pill">One Touch Pass/Rising Shot</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+                    <div class="col-md-6 col-lg-4 col-xl-3" data-position="mf">
+                    <div class="player-card">
+                        <div class="player-image">
+                            <img src="images/pp.jpg" alt="Rafael Leão">
+                            <div class="player-position">AMF</div>
+                        </div>
+                        <div class="player-info">
+                            <h4 class="player-name">Rafael Leao</h4>
+                            <p class="player-team">Portugal</p>
+                            <div class="player-stats">
+                                <div class="stat-item">
+                                    <div class="stat-value">87</div>
+                                    <div class="stat-label">KP</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">98</div>
+                                    <div class="stat-label">DBL</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">94</div>
+                                    <div class="stat-label">BCL</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">97</div>
+                                    <div class="stat-label">SPD</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="player-progressions">
+                <div class="progression-header">
+                    <div class="progression-image">
+                        <img src="images/dbleao_amf.jpg" alt="Rafael Leão">
+                    </div>
+                </div>
+                <div class="progression-level">
+                    <div class="level-title">
+                        <span>Added Skills</span>
+                        <span>AMF</span>
+                    </div>
+                    <div class="level-stats">
+                        <span class="stat-pill">Long Range Shooting</span>
+                        <span class="stat-pill">First Time Shot</span>
+                        <span class="stat-pill">Outside Curler</span>
+                        <span class="stat-pill">Pin Point Crossing</span>
+                        <span class="stat-pill">One Touch Pass/Rising Shot</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+                <div class="col-md-6 col-lg-4 col-xl-3" data-position="mf">
+                    <div class="player-card">
+                        <div class="player-image">
+                            <img src="images/pp.jpg" alt="Pavel Nedvěd">
+                            <div class="player-position">AMF</div>
+                        </div>
+                        <div class="player-info">
+                            <h4 class="player-name">Pavel Nedved</h4>
+                            <p class="player-team">Juventus</p>
+                            <div class="player-stats">
+                                <div class="stat-item">
+                                    <div class="stat-value">94</div>
+                                    <div class="stat-label">KP</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">97</div>
+                                    <div class="stat-label">DBL</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">94</div>
+                                    <div class="stat-label">BCL</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">97</div>
+                                    <div class="stat-label">STA</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="player-progressions">
+                <div class="progression-header">
+                    <div class="progression-image">
+                        <img src="images/dbnedved1.jpg" alt="Pavel Nedvěd">
+                    </div>
+                </div>
+                <div class="progression-level">
+                    <div class="level-title">
+                        <span>Added Skills</span>
+                        <span>AMF</span>
+                    </div>
+                    <div class="level-stats">
+                        <span class="stat-pill">Double Touch</span>
+                        <span class="stat-pill">First Time Shot</span>
+                        <span class="stat-pill">Sole Control</span>
+                        <span class="stat-pill">Weighted Pass</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+                    <div class="col-md-6 col-lg-4 col-xl-3" data-position="mf">
+                    <div class="player-card">
+                        <div class="player-image">
+                            <img src="images/pp.jpg" alt="Lothar Matthäus">
+                            <div class="player-position">DMF</div>
+                        </div>
+                        <div class="player-info">
+                            <h4 class="player-name">Lothar Matthäus</h4>
+                            <p class="player-team">Germany</p>
+                            <div class="player-stats">
+                                <div class="stat-item">
+                                    <div class="stat-value">93</div>
+                                    <div class="stat-label">KP</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">92</div>
+                                    <div class="stat-label">DAW</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">91</div>
+                                    <div class="stat-label">DEN</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">96</div>
+                                    <div class="stat-label">STA</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="player-progressions">
+                <div class="progression-header">
+                    <div class="progression-image">
+                        <img src="images/dbmatthaus1.jpg" alt="Lothar Matthäus">
+                    </div>
+                </div>
+                <div class="progression-level">
+                    <div class="level-title">
+                        <span>Added Skills</span>
+                        <span>DMF</span>
+                    </div>
+                    <div class="level-stats">
+                        <span class="stat-pill">Blocker</span>
+                        <span class="stat-pill">Weighted Pass</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+                    <div class="col-md-6 col-lg-4 col-xl-3" data-position="mf">
+                    <div class="player-card">
+                        <div class="player-image">
+                            <img src="images/pp.jpg" alt="Frank Rijkaard">
+                            <div class="player-position">DMF</div>
+                        </div>
+                        <div class="player-info">
+                            <h4 class="player-name">Frank Rijkaard</h4>
+                            <p class="player-team">AC Milan</p>
+                            <div class="player-stats">
+                                <div class="stat-item">
+                                    <div class="stat-value">91</div>
+                                    <div class="stat-label">KP</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">96</div>
+                                    <div class="stat-label">DAW</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">96</div>
+                                    <div class="stat-label">DEN</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">96</div>
+                                    <div class="stat-label">STA</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="player-progressions">
+                <div class="progression-header">
+                    <div class="progression-image">
+                        <img src="images/dbrijkaard11.jpg" alt="Frank Rijkaard">
+                    </div>
+                </div>
+                <div class="progression-level">
+                    <div class="level-title">
+                        <span>Added Skills</span>
+                        <span>DMF</span>
+                    </div>
+                    <div class="level-stats">
+                        <span class="stat-pill">Heading</span>
+                        <span class="stat-pill">Weighted Pass</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+                    <div class="col-md-6 col-lg-4 col-xl-3" data-position="mf">
+                    <div class="player-card">
+                        <div class="player-image">
+                            <img src="images/pp.jpg" alt="Roberto Donadoni">
+                            <div class="player-position">LMF</div>
+                        </div>
+                        <div class="player-info">
+                            <h4 class="player-name">Roberto Donadoni</h4>
+                            <p class="player-team">AC Milan</p>
+                            <div class="player-stats">
+                                <div class="stat-item">
+                                    <div class="stat-value">92</div>
+                                    <div class="stat-label">KP</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">93</div>
+                                    <div class="stat-label">DBL</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">92</div>
+                                    <div class="stat-label">TIP</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">94</div>
+                                    <div class="stat-label">SPD</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="player-progressions">
+                <div class="progression-header">
+                    <div class="progression-image">
+                        <img src="images/dbdonadoni.jpg" alt="Roberto Donadoni">
+                    </div>
+                </div>
+                <div class="progression-level">
+                    <div class="level-title">
+                        <span>Added Skills</span>
+                        <span>LMF</span>
+                    </div>
+                    <div class="level-stats">
+                        <span class="stat-pill">One Touch Pass</span>
+                        <span class="stat-pill">Weighted Pass</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+                    <div class="col-md-6 col-lg-4 col-xl-3" data-position="mf">
+                    <div class="player-card">
+                        <div class="player-image">
+                            <img src="images/pp.jpg" alt="Lothar Matthäus">
+                            <div class="player-position">AMF</div>
+                        </div>
+                        <div class="player-info">
+                            <h4 class="player-name">Lothar Matthäus</h4>
+                            <p class="player-team">Inter Milan</p>
+                            <div class="player-stats">
+                                <div class="stat-item">
+                                    <div class="stat-value">91</div>
+                                    <div class="stat-label">KP</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">97</div>
+                                    <div class="stat-label">TIP</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">92</div>
+                                    <div class="stat-label">BCL</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">94</div>
+                                    <div class="stat-label">STA</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="player-progressions">
+                <div class="progression-header">
+                    <div class="progression-image">
+                        <img src="images/dbmatthaus2.jpg" alt="Lothar Matthäus">
+                    </div>
+                </div>
+                <div class="progression-level">
+                    <div class="level-title">
+                        <span>Added Skills</span>
+                        <span>AMF</span>
+                    </div>
+                    <div class="level-stats">
+                        <span class="stat-pill">Double Touch</span>
+                        <span class="stat-pill">Weighted Pass</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+                    <div class="col-md-6 col-lg-4 col-xl-3" data-position="mf">
+                    <div class="player-card">
+                        <div class="player-image">
+                            <img src="images/pp.jpg" alt="Hidetoshi Nakata">
+                            <div class="player-position">AMF</div>
+                        </div>
+                        <div class="player-info">
+                            <h4 class="player-name">Hidetoshi Nakata</h4>
+                            <p class="player-team">Japan</p>
+                            <div class="player-stats">
+                                <div class="stat-item">
+                                    <div class="stat-value">98</div>
+                                    <div class="stat-label">KP</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">95</div>
+                                    <div class="stat-label">TIP</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">91</div>
+                                    <div class="stat-label">BCL</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">91</div>
+                                    <div class="stat-label">LPS</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="player-progressions">
+                <div class="progression-header">
+                    <div class="progression-image">
+                        <img src="images/dbnakata.jpg" alt="Hidetoshi Nakata">
+                    </div>
+                </div>
+                <div class="progression-level">
+                    <div class="level-title">
+                        <span>Added Skills</span>
+                        <span>AMF</span>
+                    </div>
+                    <div class="level-stats">
+                        <span class="stat-pill">Long-Range Shooting</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+                    <div class="col-md-6 col-lg-4 col-xl-3" data-position="mf">
+                    <div class="player-card">
+                        <div class="player-image">
+                            <img src="images/pp.jpg" alt="Dennis Bergkamp">
+                            <div class="player-position">AMF</div>
+                        </div>
+                        <div class="player-info">
+                            <h4 class="player-name">Dennis Bergkamp</h4>
+                            <p class="player-team">Ajax</p>
+                            <div class="player-stats">
+                                <div class="stat-item">
+                                    <div class="stat-value">86</div>
+                                    <div class="stat-label">KP</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">91</div>
+                                    <div class="stat-label">TIP</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">96</div>
+                                    <div class="stat-label">BCL</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">89</div>
+                                    <div class="stat-label">STA</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="player-progressions">
+                <div class="progression-header">
+                    <div class="progression-image">
+                        <img src="images/dbbergkamp.jpg" alt="Dennis Bergkamp">
+                    </div>
+                </div>
+                <div class="progression-level">
+                    <div class="level-title">
+                        <span>Added Skills</span>
+                        <span>AMF</span>
+                    </div>
+                    <div class="level-stats">
+                        <span class="stat-pill">Double Touch</span>
+                        <span class="stat-pill">Long-Range Shooting</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+                <div class="col-md-6 col-lg-4 col-xl-3" data-position="mf">
+                    <div class="player-card">
+                        <div class="player-image">
+                            <img src="images/pp.jpg" alt="Gilberto Silva">
+                            <div class="player-position">DMF</div>
+                        </div>
+                        <div class="player-info">
+                            <h4 class="player-name">Gilberto Silva</h4>
+                            <p class="player-team">Arsenal</p>
+                            <div class="player-stats">
+                                <div class="stat-item">
+                                    <div class="stat-value">91</div>
+                                    <div class="stat-label">PHY</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">98</div>
+                                    <div class="stat-label">DEN</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">96</div>
+                                    <div class="stat-label">DAW</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">97</div>
+                                    <div class="stat-label">STA</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="player-progressions">
+                <div class="progression-header">
+                    <div class="progression-image">
+                        <img src="images/sbgilberto1.jpg" alt="Gilberto Silva">
+                    </div>
+                </div>
+                <div class="progression-level">
+                    <div class="level-title">
+                        <span>Added Skills</span>
+                        <span>DMF</span>
+                    </div>
+                    <div class="level-stats">
+                        <span class="stat-pill">Acrobatic Clearance</span>
+                        <span class="stat-pill">Through Pass</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+                    <div class="col-md-6 col-lg-4 col-xl-3" data-position="mf">
+                    <div class="player-card">
+                        <div class="player-image">
+                            <img src="images/pp.jpg" alt="Uli Hoeness">
+                            <div class="player-position">AMF</div>
+                        </div>
+                        <div class="player-info">
+                            <h4 class="player-name">Uli Hoeness</h4>
+                            <p class="player-team">FC Bayern</p>
+                            <div class="player-stats">
+                                <div class="stat-item">
+                                    <div class="stat-value">91</div>
+                                    <div class="stat-label">KP</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">90</div>
+                                    <div class="stat-label">TIP</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">94</div>
+                                    <div class="stat-label">BCL</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">95</div>
+                                    <div class="stat-label">SPD</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="player-progressions">
+                <div class="progression-header">
+                    <div class="progression-image">
+                        <img src="images/dbhoeness.jpg" alt="Uli Hoeness">
+                    </div>
+                </div>
+                <div class="progression-level">
+                    <div class="level-title">
+                        <span>Added Skills</span>
+                        <span>AMF</span>
+                    </div>
+                    <div class="level-stats">
+                        <span class="stat-pill">Double Touch</span>
+                        <span class="stat-pill">Weighted Pass/Super Sub</span>
+                        <span class="stat-pill">Outside Curler</span>
+                        <span class="stat-pill">One Touch Pass</span>
+                        <span class="stat-pill">Cut Behind Turn</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+                    <div class="col-md-6 col-lg-4 col-xl-3" data-position="mf">
+                    <div class="player-card">
+                        <div class="player-image">
+                            <img src="images/pp.jpg" alt="Dominik Szobosziai">
+                            <div class="player-position">CMF</div>
+                        </div>
+                        <div class="player-info">
+                            <h4 class="player-name">Dominik Szobosziai</h4>
+                            <p class="player-team">Liverpool</p>
+                            <div class="player-stats">
+                                <div class="stat-item">
+                                    <div class="stat-value">95</div>
+                                    <div class="stat-label">KP</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">96</div>
+                                    <div class="stat-label">CRL</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">91</div>
+                                    <div class="stat-label">SPD</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">93</div>
+                                    <div class="stat-label">STA</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="player-progressions">
+                <div class="progression-header">
+                    <div class="progression-image">
+                        <img src="images/dbszoboziai.jpg" alt="Dominik Szobosziai">
+                    </div>
+                </div>
+                <div class="progression-level">
+                    <div class="level-title">
+                        <span>Added Skills</span>
+                        <span>CMF</span>
+                    </div>
+                    <div class="level-stats">
+                        <span class="stat-pill">Outside Curler</span>
+                        <span class="stat-pill">Rising Shot</span>
+                        <span class="stat-pill">Pinpoint Crossing</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+                    <div class="col-md-6 col-lg-4 col-xl-3" data-position="mf">
+                    <div class="player-card">
+                        <div class="player-image">
+                            <img src="images/pp.jpg" alt="Andres Iniesta">
+                            <div class="player-position">AMF</div>
+                        </div>
+                        <div class="player-info">
+                            <h4 class="player-name">Andres Iniesta</h4>
+                            <p class="player-team">Spain</p>
+                            <div class="player-stats">
+                                <div class="stat-item">
+                                    <div class="stat-value">91</div>
+                                    <div class="stat-label">KP</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">98</div>
+                                    <div class="stat-label">TIP</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">97</div>
+                                    <div class="stat-label">BCL</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">95</div>
+                                    <div class="stat-label">DBL</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="player-progressions">
+                <div class="progression-header">
+                    <div class="progression-image">
+                        <img src="images/dbiniesta.jpg" alt="Andres Iniesta">
+                    </div>
+                </div>
+                <div class="progression-level">
+                    <div class="level-title">
+                        <span>Added Skills</span>
+                        <span>AMF</span>
+                    </div>
+                    <div class="level-stats">
+                        <span class="stat-pill">Long-Range Shooting</span>
+                        <span class="stat-pill">First Time Shot</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+                    <div class="col-md-6 col-lg-4 col-xl-3" data-position="mf">
+                    <div class="player-card">
+                        <div class="player-image">
+                            <img src="images/pp.jpg" alt="Rafael van der Vaart">
+                            <div class="player-position">CMF</div>
+                        </div>
+                        <div class="player-info">
+                            <h4 class="player-name">Rafael van der Vaart</h4>
+                            <p class="player-team">Netherlands</p>
+                            <div class="player-stats">
+                                <div class="stat-item">
+                                    <div class="stat-value">93</div>
+                                    <div class="stat-label">KP</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">92</div>
+                                    <div class="stat-label">CRL</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">93</div>
+                                    <div class="stat-label">TIP</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">91</div>
+                                    <div class="stat-label">STA</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="player-progressions">
+                <div class="progression-header">
+                    <div class="progression-image">
+                        <img src="images/dbvandervaan.jpg" alt="Rafael van der Vaart">
+                    </div>
+                </div>
+                <div class="progression-level">
+                    <div class="level-title">
+                        <span>Added Skills</span>
+                        <span>CMF</span>
+                    </div>
+                    <div class="level-stats">
+                        <span class="stat-pill">Double Touch</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+                    <div class="col-md-6 col-lg-4 col-xl-3" data-position="mf">
+                    <div class="player-card">
+                        <div class="player-image">
+                            <img src="images/pp.jpg" alt="Yaya Toure">
+                            <div class="player-position">DMF</div>
+                        </div>
+                        <div class="player-info">
+                            <h4 class="player-name">Yaya Toure</h4>
+                            <p class="player-team">Manchester City</p>
+                            <div class="player-stats">
+                                <div class="stat-item">
+                                    <div class="stat-value">92</div>
+                                    <div class="stat-label">TAK</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">90</div>
+                                    <div class="stat-label">DEN</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">91</div>
+                                    <div class="stat-label">DAW</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">94</div>
+                                    <div class="stat-label">STA</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="player-progressions">
+                <div class="progression-header">
+                    <div class="progression-image">
+                        <img src="images/dbtoure1.jpg" alt="Yaya Toure">
+                    </div>
+                </div>
+                <div class="progression-level">
+                    <div class="level-title">
+                        <span>Added Skills</span>
+                        <span>DMF</span>
+                    </div>
+                    <div class="level-stats">
+                        <span class="stat-pill">Interception</span>
+                        <span class="stat-pill">Weighted Pass</span>
+                        <span class="stat-pill">Fighting Spirit</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+                    <div class="col-md-6 col-lg-4 col-xl-3" data-position="mf">
+                    <div class="player-card">
+                        <div class="player-image">
+                            <img src="images/pp.jpg" alt="Roberto Carlos">
+                            <div class="player-position">LMF</div>
+                        </div>
+                        <div class="player-info">
+                            <h4 class="player-name">Roberto Carlos</h4>
+                            <p class="player-team">Brazil</p>
+                            <div class="player-stats">
+                                <div class="stat-item">
+                                    <div class="stat-value">99</div>
+                                    <div class="stat-label">SPD</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">100</div>
+                                    <div class="stat-label">KP</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">88</div>
+                                    <div class="stat-label">DBL</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">96</div>
+                                    <div class="stat-label">STA</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="player-progressions">
+                <div class="progression-header">
+                    <div class="progression-image">
+                        <img src="images/dbcarlos.jpg" alt="Roberto Carlos">
+                    </div>
+                </div>
+                <div class="progression-level">
+                    <div class="level-title">
+                        <span>Added Skills</span>
+                        <span>LMF</span>
+                    </div>
+                    <div class="level-stats">
+                        <span class="stat-pill">One Touch Pass</span>
+                        <span class="stat-pill">Weighted Pass</span>
+                        <span class="stat-pill">Fighting Spirit</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+                    <div class="col-md-6 col-lg-4 col-xl-3" data-position="mf">
+                    <div class="player-card">
+                        <div class="player-image">
+                            <img src="images/pp.jpg" alt="Cafu">
+                            <div class="player-position">RMF</div>
+                        </div>
+                        <div class="player-info">
+                            <h4 class="player-name">Cafu</h4>
+                            <p class="player-team">Brazil</p>
+                            <div class="player-stats">
+                                <div class="stat-item">
+                                    <div class="stat-value">96</div>
+                                    <div class="stat-label">SPD</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">93</div>
+                                    <div class="stat-label">DBL</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">95</div>
+                                    <div class="stat-label">ACC</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">94</div>
+                                    <div class="stat-label">STA</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="player-progressions">
+                <div class="progression-header">
+                    <div class="progression-image">
+                        <img src="images/dbcafu.jpg" alt="Cafu">
+                    </div>
+                </div>
+                <div class="progression-level">
+                    <div class="level-title">
+                        <span>Added Skills</span>
+                        <span>RMF</span>
+                    </div>
+                    <div class="level-stats">
+                        <span class="stat-pill">One Touch Pass</span>
+                        <span class="stat-pill">Weighted Pass</span>
+                        <span class="stat-pill">Fighting Spirit</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+                    <div class="col-md-6 col-lg-4 col-xl-3" data-position="mf">
+                    <div class="player-card">
+                        <div class="player-image">
+                            <img src="images/pp.jpg" alt="Ronaldinho Gaucho">
+                            <div class="player-position">AMF</div>
+                        </div>
+                        <div class="player-info">
+                            <h4 class="player-name">Ronaldinho Gaucho</h4>
+                            <p class="player-team">Brazil</p>
+                            <div class="player-stats">
+                                <div class="stat-item">
+                                    <div class="stat-value">99</div>
+                                    <div class="stat-label">DBL</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">97</div>
+                                    <div class="stat-label">TIP</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">96</div>
+                                    <div class="stat-label">ACC</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">92</div>
+                                    <div class="stat-label">CRL</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="player-progressions">
+                <div class="progression-header">
+                    <div class="progression-image">
+                        <img src="images/dbronaldinho.jpg" alt="Ronaldinho Gaucho">
+                    </div>
+                </div>
+                <div class="progression-level">
+                    <div class="level-title">
+                        <span>Added Skills</span>
+                        <span>AMF</span>
+                    </div>
+                    <div class="level-stats">
+                        <span class="stat-pill">Nil</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+                
+                <!-- Defenders -->
+
+                <div class="col-md-6 col-lg-4 col-xl-3" data-position="df">
+                    <div class="player-card">
+                        <div class="player-image">
+                            <img src="images/pp.jpg" alt="Massimo Oddo">
+                            <div class="player-position">RB</div>
+                        </div>
+                        <div class="player-info">
+                            <h4 class="player-name">Massimo Oddo</h4>
+                            <p class="player-team">AC Milan</p>
+                            <div class="player-stats">
+                                <div class="stat-item">
+                                    <div class="stat-value">93</div>
+                                    <div class="stat-label">SPD</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">86</div>
+                                    <div class="stat-label">DEN</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">88</div>
+                                    <div class="stat-label">KP</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">100</div>
+                                    <div class="stat-label">STA</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="player-progressions">
+                <div class="progression-header">
+                    <div class="progression-image">
+                        <img src="images/dboddo.jpg" alt="Massimo Oddo">
+                    </div>
+                </div>
+                <div class="progression-level">
+                    <div class="level-title">
+                        <span>Added Skills</span>
+                        <span>RB</span>
+                    </div>
+                    <div class="level-stats">
+                        <span class="stat-pill">Double Touch</span>
+                        <span class="stat-pill">Blocker</span>
+                        <span class="stat-pill">Outside Curler</span>
+                        <span class="stat-pill">Heading</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+                <div class="col-md-6 col-lg-4 col-xl-3" data-position="df">
+                    <div class="player-card">
+                        <div class="player-image">
+                            <img src="images/pp.jpg" alt="Daniel Van Buyten">
+                            <div class="player-position">CB</div>
+                        </div>
+                        <div class="player-info">
+                            <h4 class="player-name">Daniel Van Buyten</h4>
+                            <p class="player-team">FC Bayern</p>
+                            <div class="player-stats">
+                                <div class="stat-item">
+                                    <div class="stat-value">90</div>
+                                    <div class="stat-label">JMP</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">95</div>
+                                    <div class="stat-label">DEN</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">95</div>
+                                    <div class="stat-label">DAW</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">90</div>
+                                    <div class="stat-label">PHY</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="player-progressions">
+                <div class="progression-header">
+                    <div class="progression-image">
+                        <img src="images/dbvanbuyten.jpg" alt="Daniel Van Buyten">
+                    </div>
+                </div>
+                <div class="progression-level">
+                    <div class="level-title">
+                        <span>Added Skills</span>
+                        <span>CB</span>
+                    </div>
+                    <div class="level-stats">
+                        <span class="stat-pill">Low Lofted Pass</span>
+                        <span class="stat-pill">One Touch Pass</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+                    <div class="col-md-6 col-lg-4 col-xl-3" data-position="df">
+                    <div class="player-card">
+                        <div class="player-image">
+                            <img src="images/pp.jpg" alt="Frank Rijkaard">
+                            <div class="player-position">CB</div>
+                        </div>
+                        <div class="player-info">
+                            <h4 class="player-name">Frank Rijkaard</h4>
+                            <p class="player-team">Netherlands</p>
+                            <div class="player-stats">
+                                <div class="stat-item">
+                                    <div class="stat-value">91</div>
+                                    <div class="stat-label">PHY</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">97</div>
+                                    <div class="stat-label">DEN</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">97</div>
+                                    <div class="stat-label">DAW</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">93</div>
+                                    <div class="stat-label">STA</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="player-progressions">
+                <div class="progression-header">
+                    <div class="progression-image">
+                        <img src="images/dbrijkaard2.jpg" alt="Frank Rijkaard">
+                    </div>
+                </div>
+                <div class="progression-level">
+                    <div class="level-title">
+                        <span>Added Skills</span>
+                        <span>CB</span>
+                    </div>
+                    <div class="level-stats">
+                        <span class="stat-pill">Ariel Superiority</span>
+                        <span class="stat-pill">Heading</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+                    <div class="col-md-6 col-lg-4 col-xl-3" data-position="df">
+                    <div class="player-card">
+                        <div class="player-image">
+                            <img src="images/pp.jpg" alt="Alessandro Nesta">
+                            <div class="player-position">CB</div>
+                        </div>
+                        <div class="player-info">
+                            <h4 class="player-name">Alessandro Nesta</h4>
+                            <p class="player-team">AC Milan</p>
+                            <div class="player-stats">
+                                <div class="stat-item">
+                                    <div class="stat-value">90</div>
+                                    <div class="stat-label">SPD</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">96</div>
+                                    <div class="stat-label">DEN</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">98</div>
+                                    <div class="stat-label">DAW</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">91</div>
+                                    <div class="stat-label">STA</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="player-progressions">
+                <div class="progression-header">
+                    <div class="progression-image">
+                        <img src="images/dbnesta2.jpg" alt="Alessandro Nesta">
+                    </div>
+                </div>
+                <div class="progression-level">
+                    <div class="level-title">
+                        <span>Added Skills</span>
+                        <span>CB</span>
+                    </div>
+                    <div class="level-stats">
+                        <span class="stat-pill">Nil</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+                    <div class="col-md-6 col-lg-4 col-xl-3" data-position="df">
+                    <div class="player-card">
+                        <div class="player-image">
+                            <img src="images/pp.jpg" alt="Paolo Maldini">
+                            <div class="player-position">LB</div>
+                        </div>
+                        <div class="player-info">
+                            <h4 class="player-name">Paolo Maldini</h4>
+                            <p class="player-team">AC Milan</p>
+                            <div class="player-stats">
+                                <div class="stat-item">
+                                    <div class="stat-value">94</div>
+                                    <div class="stat-label">SPD</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">97</div>
+                                    <div class="stat-label">DEN</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">96</div>
+                                    <div class="stat-label">DAW</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">97</div>
+                                    <div class="stat-label">STA</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="player-progressions">
+                <div class="progression-header">
+                    <div class="progression-image">
+                        <img src="images/dbmaldini.jpg" alt="Paolo Maldini">
+                    </div>
+                </div>
+                <div class="progression-level">
+                    <div class="level-title">
+                        <span>Added Skills</span>
+                        <span>LB</span>
+                    </div>
+                    <div class="level-stats">
+                        <span class="stat-pill">Ariel Superiority</span>
+                        <span class="stat-pill">Heading</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+                    <div class="col-md-6 col-lg-4 col-xl-3" data-position="df">
+                    <div class="player-card">
+                        <div class="player-image">
+                            <img src="images/pp.jpg" alt="A. Costacurta">
+                            <div class="player-position">LB</div>
+                        </div>
+                        <div class="player-info">
+                            <h4 class="player-name">A. Costacurta</h4>
+                            <p class="player-team">AC Milan</p>
+                            <div class="player-stats">
+                                <div class="stat-item">
+                                    <div class="stat-value">92</div>
+                                    <div class="stat-label">SPD</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">99</div>
+                                    <div class="stat-label">DEN</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">93</div>
+                                    <div class="stat-label">DAW</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">99</div>
+                                    <div class="stat-label">STA</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="player-progressions">
+                <div class="progression-header">
+                    <div class="progression-image">
+                        <img src="images/dbcosta.jpg" alt="A. Costacurta">
+                    </div>
+                </div>
+                <div class="progression-level">
+                    <div class="level-title">
+                        <span>Added Skills</span>
+                        <span>LB</span>
+                    </div>
+                    <div class="level-stats">
+                        <span class="stat-pill">Ariel Superiority</span>
+                        <span class="stat-pill">Through Pass</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+                    <div class="col-md-6 col-lg-4 col-xl-3" data-position="df">
+                    <div class="player-card">
+                        <div class="player-image">
+                            <img src="images/pp.jpg" alt="Lilian Thuram">
+                            <div class="player-position">RB</div>
+                        </div>
+                        <div class="player-info">
+                            <h4 class="player-name">Lilian Thuram</h4>
+                            <p class="player-team">Juventus</p>
+                            <div class="player-stats">
+                                <div class="stat-item">
+                                    <div class="stat-value">97</div>
+                                    <div class="stat-label">SPD</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">86</div>
+                                    <div class="stat-label">DEN</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">97</div>
+                                    <div class="stat-label">SPD</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">94</div>
+                                    <div class="stat-label">DAW</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="player-progressions">
+                <div class="progression-header">
+                    <div class="progression-image">
+                        <img src="images/dbthuram.jpg" alt="Lilian Thuram">
+                    </div>
+                </div>
+                <div class="progression-level">
+                    <div class="level-title">
+                        <span>Added Skills</span>
+                        <span>RB</span>
+                    </div>
+                    <div class="level-stats">
+                        <span class="stat-pill">Through Pass</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+                    <div class="col-md-6 col-lg-4 col-xl-3" data-position="df">
+                    <div class="player-card">
+                        <div class="player-image">
+                            <img src="images/pp.jpg" alt="Martin Demichelis">
+                            <div class="player-position">CB</div>
+                        </div>
+                        <div class="player-info">
+                            <h4 class="player-name">Martin Demichelis</h4>
+                            <p class="player-team">FC Bayern</p>
+                            <div class="player-stats">
+                                <div class="stat-item">
+                                    <div class="stat-value">92</div>
+                                    <div class="stat-label">JMP</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">92</div>
+                                    <div class="stat-label">PHY</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">97</div>
+                                    <div class="stat-label">DEN</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">96</div>
+                                    <div class="stat-label">DAW</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="player-progressions">
+                <div class="progression-header">
+                    <div class="progression-image">
+                        <img src="images/dbdemichelles.jpg" alt="Martin Demichelis">
+                    </div>
+                </div>
+                <div class="progression-level">
+                    <div class="level-title">
+                        <span>Added Skills</span>
+                        <span>CB</span>
+                    </div>
+                    <div class="level-stats">
+                        <span class="stat-pill">Captaincy</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+                    <div class="col-md-6 col-lg-4 col-xl-3" data-position="df">
+                    <div class="player-card">
+                        <div class="player-image">
+                            <img src="images/pp.jpg" alt="Lee Dixon">
+                            <div class="player-position">RB</div>
+                        </div>
+                        <div class="player-info">
+                            <h4 class="player-name">Lee Dixon</h4>
+                            <p class="player-team">Arsenal</p>
+                            <div class="player-stats">
+                                <div class="stat-item">
+                                    <div class="stat-value">98</div>
+                                    <div class="stat-label">SPD</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">92</div>
+                                    <div class="stat-label">DEN</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">90</div>
+                                    <div class="stat-label">KP</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">100</div>
+                                    <div class="stat-label">STA</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="player-progressions">
+                <div class="progression-header">
+                    <div class="progression-image">
+                        <img src="images/dbdixon1.jpg" alt="Lee Dixon">
+                    </div>
+                </div>
+                <div class="progression-level">
+                    <div class="level-title">
+                        <span>Added Skills</span>
+                        <span>RB</span>
+                    </div>
+                    <div class="level-stats">
+                        <span class="stat-pill">Acrobatic Clearance</span>
+                        <span class="stat-pill">Through Pass</span>
+                        <span class="stat-pill">Heading</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+                    <div class="col-md-6 col-lg-4 col-xl-3" data-position="df">
+                    <div class="player-card">
+                        <div class="player-image">
+                            <img src="images/pp.jpg" alt="Dan Burn">
+                            <div class="player-position">CB</div>
+                        </div>
+                        <div class="player-info">
+                            <h4 class="player-name">Dan Burn</h4>
+                            <p class="player-team">England</p>
+                            <div class="player-stats">
+                                <div class="stat-item">
+                                    <div class="stat-value">94</div>
+                                    <div class="stat-label">PHY</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">94</div>
+                                    <div class="stat-label">DEN</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">96</div>
+                                    <div class="stat-label">DAW</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">94</div>
+                                    <div class="stat-label">TAK</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="player-progressions">
+                <div class="progression-header">
+                    <div class="progression-image">
+                        <img src="images/dbburn.jpg" alt="Dan Burn">
+                    </div>
+                </div>
+                <div class="progression-level">
+                    <div class="level-title">
+                        <span>Added Skills</span>
+                        <span>CB</span>
+                    </div>
+                    <div class="level-stats">
+                        <span class="stat-pill">Sliding Tackle</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+                    <div class="col-md-6 col-lg-4 col-xl-3" data-position="df">
+                    <div class="player-card">
+                        <div class="player-image">
+                            <img src="images/pp.jpg" alt="Alessandro Nesta">
+                            <div class="player-position">CB</div>
+                        </div>
+                        <div class="player-info">
+                            <h4 class="player-name">Alessandro Nesta</h4>
+                            <p class="player-team">Italy</p>
+                            <div class="player-stats">
+                                <div class="stat-item">
+                                    <div class="stat-value">90</div>
+                                    <div class="stat-label">SPD</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">98</div>
+                                    <div class="stat-label">DEN</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">99</div>
+                                    <div class="stat-label">DAW</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">91</div>
+                                    <div class="stat-label">PHY</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="player-progressions">
+                <div class="progression-header">
+                    <div class="progression-image">
+                        <img src="images/dbnesta.jpg" alt="Alessandro Nesta">
+                    </div>
+                </div>
+                <div class="progression-level">
+                    <div class="level-title">
+                        <span>Added Skills</span>
+                        <span>CB</span>
+                    </div>
+                    <div class="level-stats">
+                        <span class="stat-pill">Nil</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+                
+                <!-- Goalkeepers -->
+                <div class="col-md-6 col-lg-4 col-xl-3" data-position="gk">
+                    <div class="player-card">
+                        <div class="player-image">
+                            <img src="images/pp.jpg" alt="Dida">
+                            <div class="player-position">GK</div>
+                        </div>
+                        <div class="player-info">
+                            <h4 class="player-name">Dida</h4>
+                            <p class="player-team">AC Milan</p>
+                            <div class="player-stats">
+                                <div class="stat-item">
+                                    <div class="stat-value">96</div>
+                                    <div class="stat-label">GAW</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">93</div>
+                                    <div class="stat-label">GCH</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">98</div>
+                                    <div class="stat-label">GRF</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">95</div>
+                                    <div class="stat-label">GRH</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="player-progressions">
+                <div class="progression-header">
+                    <div class="progression-image">
+                        <img src="images/dbdida.jpg" alt="Dida">
+                    </div>
+                </div>
+                <div class="progression-level">
+                    <div class="level-title">
+                        <span>Added Skills</span>
+                        <span>GK</span>
+                    </div>
+                    <div class="level-stats">
+                        <span class="stat-pill">Low-Lofted Pass</span>
+                        <span class="stat-pill">Fighting Spirit</span>
+                        <span class="stat-pill">Captaincy</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+                    <div class="col-md-6 col-lg-4 col-xl-3" data-position="gk">
+                    <div class="player-card">
+                        <div class="player-image">
+                            <img src="images/pp.jpg" alt="Peter Schmeichel">
+                            <div class="player-position">GK</div>
+                        </div>
+                        <div class="player-info">
+                            <h4 class="player-name">Peter Schmeichel</h4>
+                            <p class="player-team">Manchester United</p>
+                            <div class="player-stats">
+                                <div class="stat-item">
+                                    <div class="stat-value">98</div>
+                                    <div class="stat-label">GAW</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">95</div>
+                                    <div class="stat-label">GPR</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">98</div>
+                                    <div class="stat-label">GRF</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">97</div>
+                                    <div class="stat-label">GRH</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="player-progressions">
+                <div class="progression-header">
+                    <div class="progression-image">
+                        <img src="images/dbschmeichel.jpg" alt="Peter Schmeichel">
+                    </div>
+                </div>
+                <div class="progression-level">
+                    <div class="level-title">
+                        <span>Added Skills</span>
+                        <span>GK</span>
+                    </div>
+                    <div class="level-stats">
+                        <span class="stat-pill">Low-Lofted Pass</span>
+                        <span class="stat-pill">Fighting Spirit</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+                    <div class="col-md-6 col-lg-4 col-xl-3" data-position="gk">
+                    <div class="player-card">
+                        <div class="player-image">
+                            <img src="images/pp.jpg" alt="Jordan Pickford">
+                            <div class="player-position">GK</div>
+                        </div>
+                        <div class="player-info">
+                            <h4 class="player-name">Jordan Pickford</h4>
+                            <p class="player-team">England</p>
+                            <div class="player-stats">
+                                <div class="stat-item">
+                                    <div class="stat-value">95</div>
+                                    <div class="stat-label">GAW</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">94</div>
+                                    <div class="stat-label">GPR</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">94</div>
+                                    <div class="stat-label">GRF</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">92</div>
+                                    <div class="stat-label">GRH</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="player-progressions">
+                <div class="progression-header">
+                    <div class="progression-image">
+                        <img src="images/dbpickford.jpg" alt="Jordan Pickford">
+                    </div>
+                </div>
+                <div class="progression-level">
+                    <div class="level-title">
+                        <span>Added Skills</span>
+                        <span>GK</span>
+                    </div>
+                    <div class="level-stats">
+                        <span class="stat-pill">Low-Lofted Pass</span>
+                        <span class="stat-pill">Captaincy</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+                    <div class="col-md-6 col-lg-4 col-xl-3" data-position="gk">
+                    <div class="player-card">
+                        <div class="player-image">
+                            <img src="images/pp.jpg" alt="Dominik Livakovic">
+                            <div class="player-position">GK</div>
+                        </div>
+                        <div class="player-info">
+                            <h4 class="player-name">Dominik Livakovic</h4>
+                            <p class="player-team">Croatia</p>
+                            <div class="player-stats">
+                                <div class="stat-item">
+                                    <div class="stat-value">93</div>
+                                    <div class="stat-label">GAW</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">93</div>
+                                    <div class="stat-label">GPR</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">93</div>
+                                    <div class="stat-label">GRF</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">94</div>
+                                    <div class="stat-label">GRH</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="player-progressions">
+                <div class="progression-header">
+                    <div class="progression-image">
+                        <img src="images/dblivakovic.jpg" alt="Dominik Livakovic">
+                    </div>
+                </div>
+                <div class="progression-level">
+                    <div class="level-title">
+                        <span>Added Skills</span>
+                        <span>GK</span>
+                    </div>
+                    <div class="level-stats">
+                        <span class="stat-pill">Low-Lofted Pass</span>
+                        <span class="stat-pill">Fighting Spirit</span>
+                        <span class="stat-pill">Captaincy</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+                    <div class="col-md-6 col-lg-4 col-xl-3" data-position="gk">
+                    <div class="player-card">
+                        <div class="player-image">
+                            <img src="images/pp.jpg" alt="Diogo Costa">
+                            <div class="player-position">GK</div>
+                        </div>
+                        <div class="player-info">
+                            <h4 class="player-name">Diogo Costa</h4>
+                            <p class="player-team">Portugal</p>
+                            <div class="player-stats">
+                                <div class="stat-item">
+                                    <div class="stat-value">95</div>
+                                    <div class="stat-label">GAW</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">92</div>
+                                    <div class="stat-label">GPR</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">94</div>
+                                    <div class="stat-label">GRF</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">93</div>
+                                    <div class="stat-label">GRH</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="player-progressions">
+                <div class="progression-header">
+                    <div class="progression-image">
+                        <img src="images/dbdiagocosta.jpg" alt="Diogo Costa">
+                    </div>
+                </div>
+                <div class="progression-level">
+                    <div class="level-title">
+                        <span>Added Skills</span>
+                        <span>GK</span>
+                    </div>
+                    <div class="level-stats">
+                        <span class="stat-pill">Low-Lofted Pass</span>
+                        <span class="stat-pill">Fighting Spirit</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+                    <div class="col-md-6 col-lg-4 col-xl-3" data-position="gk">
+                    <div class="player-card">
+                        <div class="player-image">
+                            <img src="images/pp.jpg" alt="Maarten Paes">
+                            <div class="player-position">GK</div>
+                        </div>
+                        <div class="player-info">
+                            <h4 class="player-name">Maarten Paes</h4>
+                            <p class="player-team">Portugal</p>
+                            <div class="player-stats">
+                                <div class="stat-item">
+                                    <div class="stat-value">92</div>
+                                    <div class="stat-label">GAW</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">91</div>
+                                    <div class="stat-label">GCH</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">91</div>
+                                    <div class="stat-label">GRF</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">93</div>
+                                    <div class="stat-label">GPR</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="player-progressions">
+                <div class="progression-header">
+                    <div class="progression-image">
+                        <img src="images/dbpaes.jpg" alt="Maarten Paes">
+                    </div>
+                </div>
+                <div class="progression-level">
+                    <div class="level-title">
+                        <span>Added Skills</span>
+                        <span>GK</span>
+                    </div>
+                    <div class="level-stats">
+                        <span class="stat-pill">Low-Lofted Pass</span>
+                        <span class="stat-pill">Fighting Spirit</span>
+                        <span class="stat-pill">Captaincy</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+                    <div class="col-md-6 col-lg-4 col-xl-3" data-position="gk">
+                    <div class="player-card">
+                        <div class="player-image">
+                            <img src="images/pp.jpg" alt="Hugo Lloris">
+                            <div class="player-position">GK</div>
+                        </div>
+                        <div class="player-info">
+                            <h4 class="player-name">Hugo Lloris</h4>
+                            <p class="player-team">France</p>
+                            <div class="player-stats">
+                                <div class="stat-item">
+                                    <div class="stat-value">96</div>
+                                    <div class="stat-label">GAW</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">94</div>
+                                    <div class="stat-label">GCH</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">97</div>
+                                    <div class="stat-label">GRF</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">95</div>
+                                    <div class="stat-label">GRH</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="player-progressions">
+                <div class="progression-header">
+                    <div class="progression-image">
+                        <img src="images/dblloris.jpg" alt="Hugo Lloris">
+                    </div>
+                </div>
+                <div class="progression-level">
+                    <div class="level-title">
+                        <span>Added Skills</span>
+                        <span>GK</span>
+                    </div>
+                    <div class="level-stats">
+                        <span class="stat-pill">Low-Lofted Pass</span>
+                        <span class="stat-pill">Fighting Spirit</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+                
+                <!-- More player cards can be added here -->
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h4 class="mb-4">VaKKoTTy Gaming</h4>
+                    <p>Your ultimate resource for competitive eFootball gameplay, strategies, and player development.</p>
+                    <div class="mt-4">
+                        <a href="https://www.youtube.com/@VaKKoTTy_Gaming" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/vakkotty_gaming/" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="https://discord.gg/8WMPvuQY" class="social-icon"><i class="fab fa-discord"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="mb-4">Quick Links</h5>
+                    <div class="footer-links">
+                        <a href="index.html">Home</a>
+                        <a href="progressions.html">Player Progressions</a>
+                        <a href="managers.html">Tatics</a>
+                        <a href="gallery.html">Gallery</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="mb-4">Community</h5>
+                    <div class="footer-links">
+                        <a href="https://www.whatsapp.com/channel/0029Vb6DTQI6buMQaym2Y03U" target="_blank">Whatsapp Channel</a>
+                        <a href="https://chat.whatsapp.com/L62uwnvKNHcIfrcbaktNgF" target="_blank">Whatsapp Group</a>
+                        <a href="https://discord.gg/8WMPvuQY" target="_blank">Discord</a>
+                        <a href="https://www.instagram.com/vakkotty_gaming/" target="_blank">Instagram</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="mb-4">Resources</h5>
+                    <div class="footer-links">
+                        <a href="https://youtu.be/m66irVaIbCg?si=v_CxtugR8PB03nk3">Tutorials</a>
+                        <a href="https://www.konami.com/efootball/en/">Game Updates</a>
+                        <a href="https://efootballhub.net/">Player Database</a>
+                        <a href="https://www.youtube.com/@VaKKoTTy_Gaming/shorts">Shorts</a>
+                        <a href="https://www.youtube.com/@VaKKoTTy_Gaming/streams">Live Streams</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="mb-4">Updates</h5>
+                    <p>Subscribe for the latest tips and updates.</p>
+                    <form class="mt-3">
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control bg-dark border-dark" placeholder="Your Email">
+                            <button class="btn btn-primary" type="submit">
+                                <a href="https://www.youtube.com/@VaKKoTTy_Gaming/featured">Subscribe</a>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center copyright">
+                    <p class="mb-0">&copy; 2025 VaKKoTTy Gaming. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Progression Guide Modal -->
+    <div class="modal fade player-modal" id="progressGuideModal" tabindex="-1" aria-labelledby="progressGuideModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="progressGuideModalLabel">Player Progression Guide</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h6 class="text-primary">Understanding Player Development</h6>
+                    <p>In eFootball, player progression is crucial for building a competitive team. Each player has unique growth potential based on their age, position, and current attributes.</p>
+                    
+                    <h6 class="text-primary mt-4">Progression Levels Explained</h6>
+                    <div class="row mt-3">
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-start mb-3">
+                                <div class="level-badge me-3">1</div>
+                                <div>
+                                    <h6 class="mb-1">Basic Development</h6>
+                                    <p class="small mb-0">Focus on fundamental attributes and balanced growth.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-start mb-3">
+                                <div class="level-badge me-3">2</div>
+                                <div>
+                                    <h6 class="mb-1">Intermediate Training</h6>
+                                    <p class="small mb-0">Position-specific training begins with moderate intensity.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-start mb-3">
+                                <div class="level-badge me-3">3</div>
+                                <div>
+                                    <h6 class="mb-1">Advanced Specialization</h6>
+                                    <p class="small mb-0">High-intensity training for key position attributes.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-start mb-3">
+                                <div class="level-badge me-3">4</div>
+                                <div>
+                                    <h6 class="mb-1">Elite Performance</h6>
+                                    <p class="small mb-0">Maximizing potential with specialized training programs.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h6 class="text-primary mt-4">Training Tips</h6>
+                    <ul>
+                        <li>Prioritize increasing stats that already have a high value</li>
+                        <li><strong>Offensive Awareness, Finishing, Speed, Acceleration, and Balance:</strong> These are generally important for strikers</li>
+                        <li>Don't waste points trying to improve low-value stats</li>
+                        <li>Prioritize boosting a player's strengths rather than trying to fix weaknesses</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Got It!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS animation
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Theme toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const htmlElement = document.documentElement;
+        
+        // Check for saved theme preference or use preferred color scheme
+        const savedTheme = localStorage.getItem('theme') || 
+                          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        htmlElement.setAttribute('data-bs-theme', savedTheme);
+        
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-bs-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            htmlElement.setAttribute('data-bs-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+
+        // Player card toggle functionality
+         document.querySelectorAll('.player-card').forEach(card => {
+            card.addEventListener('click', function(e) {
+                // Don't toggle if clicking on a button or link inside the card
+                if (e.target.tagName === 'BUTTON' || e.target.tagName === 'A') {
+                    return;
+                }
+                
+                const progression = this.querySelector('.player-progressions');
+                const isActive = progression.classList.contains('active');
+                
+                // Close all other open progressions
+                document.querySelectorAll('.player-progressions.active').forEach(el => {
+                    if (el !== progression) {
+                        el.classList.remove('active');
+                        // Scroll the card back into view if it was scrolled down
+                        el.parentElement.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    }
+                });
+                
+                // Toggle current progression
+                if (!isActive) {
+                    progression.classList.add('active');
+                    // Scroll to show the full expanded card
+                    setTimeout(() => {
+                        this.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    }, 100);
+                } else {
+                    progression.classList.remove('active');
+                }
+            });
+        });
+
+        // Search functionality
+        document.getElementById('playerSearch').addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            const playerCards = document.querySelectorAll('.player-card');
+            
+            playerCards.forEach(card => {
+                const playerName = card.querySelector('.player-name').textContent.toLowerCase();
+                if (playerName.includes(searchTerm)) {
+                    card.parentElement.style.display = 'block';
+                } else {
+                    card.parentElement.style.display = 'none';
+                }
+            });
+        });
+
+        // Position filter functionality
+        document.querySelectorAll('.position-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Update active button
+                document.querySelectorAll('.position-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                const position = this.dataset.position;
+                const playerItems = document.querySelectorAll('#playersContainer > div');
+                
+                playerItems.forEach(item => {
+                    if (position === 'all' || item.dataset.position === position) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

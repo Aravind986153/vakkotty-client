@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <!-- Google Adsense -->
+     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2067618612606246"
+     crossorigin="anonymous"></script>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VaKKoTTy Gaming | Home</title>
+    <!-- Bootstrap 5.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Oxanium:wght@400;700&display=swap" rel="stylesheet">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FF6B00;
+            --primary-dark: #E05D00;
+            --secondary: #00A8E8;
+            --dark: #121212;
+            --light: #F8F9FA;
+            --gray: #2D2D2D;
+            --light-gray: #E0E0E0;
+        }
+
+        body {
+            font-family: 'Oxanium', sans-serif;
+            background-color: var(--dark);
+            color: var(--light);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        .navbar {
+            background-color: rgba(18, 18, 18, 0.9) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 107, 0, 0.3);
+        }
+
+        .navbar-brand {
+            font-weight: 900;
+            font-size: 1.8rem;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .nav-link {
+            color: var(--light) !important;
+            font-weight: 500;
+            margin: 0 10px;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--primary) !important;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary);
+            transition: width 0.3s;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            color: white;
+            font-weight: 600;
+            padding: 10px 25px;
+            border-radius: 50px;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            border-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 107, 0, 0.3);
+        }
+
+        .btn-outline-primary {
+            border-color: var(--primary);
+            color: var(--primary);
+            font-weight: 600;
+            padding: 10px 25px;
+            border-radius: 50px;
+            transition: all 0.3s;
+        }
+
+        .btn-outline-primary:hover {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 107, 0, 0.3);
+        }
+
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 50px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 4px;
+            bottom: -10px;
+            left: 0;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            z-index: 2;
+            position: relative;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .feature-card {
+            background-color: var(--gray);
+            border-radius: 15px;
+            padding: 30px;
+            height: 100%;
+            transition: all 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            border-color: var(--primary);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background-color: var(--gray);
+            color: var(--light);
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: all 0.3s;
+        }
+
+        .social-icon:hover {
+            background-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .footer {
+            background-color: var(--gray);
+            padding: 50px 0 20px;
+        }
+
+        .footer-links a {
+            color: var(--light);
+            text-decoration: none;
+            transition: color 0.3s;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            margin-top: 30px;
+        }
+
+
+        /* Banner Scroller Styles */
+        
+
+        [data-bs-theme="light"] .banners-section {
+            background-color: #f1f1f1;
+        }
+
+        .banner-container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .banner-scroll {
+            display: flex;
+            transition: transform 0.5s ease;
+            width: 300%; /* 3 banners */
+        }
+
+        .banner {
+            min-width: 100%;
+            position: relative;
+            height: 400px;
+        }
+
+        .banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .banner-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .banner-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .banner-desc {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .banner-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            z-index: 2;
+        }
+
+        .banner-btn {
+            background-color: rgba(255,107,0,0.7);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .banner-btn:hover {
+            background-color: var(--primary);
+            transform: scale(1.1);
+        }
+
+        .banner-dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 10px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--light-gray);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .dot.active {
+            background-color: var(--primary);
+            transform: scale(1.2);
+        }
+
+        @media (max-width: 768px) {
+            .banner-title {
+                font-size: 1.5rem;
+            }
+            
+            .banner-desc {
+                font-size: 0.9rem;
+            }
+            
+            .banner-btn {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    
+
+        /* Dark/Light Mode Toggle */
+        .theme-toggle {
+            width: 50px;
+            height: 25px;
+            background-color: var(--gray);
+            border-radius: 50px;
+            position: relative;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            display: flex;
+            align-items: center;
+            padding: 0 5px;
+        }
+
+        .theme-toggle i {
+            font-size: 12px;
+            color: var(--light);
+            transition: all 0.3s;
+        }
+
+        .theme-toggle .sun {
+            opacity: 0;
+            transform: translateX(-10px);
+        }
+
+        .theme-toggle .moon {
+            opacity: 1;
+            transform: translateX(10px);
+        }
+
+        [data-bs-theme="light"] .theme-toggle .sun {
+            opacity: 1;
+            transform: translateX(10px);
+            color: var(--dark);
+        }
+
+        [data-bs-theme="light"] .theme-toggle .moon {
+            opacity: 0;
+            transform: translateX(-10px);
+        }
+
+        /* Loading Screen */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--dark);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease-out;
+        }
+
+        .loading-logo {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 30px;
+            animation: pulse 2s infinite;
+            border-radius: 50%;
+        }
+
+        .loading-bar {
+            width: 200px;
+            height: 4px;
+            background-color: var(--gray);
+            border-radius: 2px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .loading-progress {
+            height: 100%;
+            width: 0;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            animation: loading 3s ease-in-out forwards;
+        }
+
+        @keyframes loading {
+            0% { width: 0; }
+            100% { width: 100%; }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        /* Video Container */
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            border: 3px solid var(--primary);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+            
+            .video-container {
+                margin-top: 50px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Light Mode Styles */
+        [data-bs-theme="light"] body {
+            background-color: var(--light);
+            color: var(--dark);
+        }
+
+        [data-bs-theme="light"] .navbar {
+            background-color: rgba(248, 249, 250, 0.9) !important;
+            border-bottom: 1px solid rgba(0, 168, 232, 0.3);
+        }
+
+        [data-bs-theme="light"] .nav-link {
+            color: var(--dark) !important;
+        }
+
+        [data-bs-theme="light"] .feature-card {
+            background-color: white;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        [data-bs-theme="light"] .feature-card:hover {
+            border-color: var(--secondary);
+        }
+
+        [data-bs-theme="light"] .footer {
+            background-color: #f1f1f1;
+        }
+
+        [data-bs-theme="light"] .footer-links a {
+            color: var(--dark);
+        }
+
+        [data-bs-theme="light"] .copyright {
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        [data-bs-theme="light"] .social-icon {
+            background-color: #e0e0e0;
+            color: var(--dark);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--gray);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-dark);
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="initialLoadingScreen">
+    <img src="images/logo1.jpg" alt="Loading Logo" class="loading-logo">
+    <div class="loading-bar">
+        <div class="loading-progress"></div>
+    </div>
+    <h4 class="mt-3">Loading Website...</h4>
+</div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">VaKKoTTy Gaming</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="progressions.html">Player Progressions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="managers.html">Tatics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <button class="btn btn-outline-primary" onclick="window.open('https://www.youtube.com/@VaKKoTTy_Gaming')">
+                            <i class="fab fa-youtube me-2"></i>YouTube
+                        </button>
+                    </li>
+                    <li class="nav-item ms-lg-2 d-flex align-items-center">
+                        <button class="theme-toggle" id="themeToggle">
+                            <i class="fas fa-sun sun"></i>
+                            <i class="fas fa-moon moon"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 hero-content">
+                    <h6 class="text-primary mb-3">eFOOTBALL GAMER</h6>
+                    <h1 class="hero-title">Dominate The Virtual Pitch</h1>
+                    <p class="hero-subtitle">Join me on my journey to become the best eFootball player in the world. Learn strategies, player progressions, and winning tactics.</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="progressions.html" class="btn btn-primary">
+                            <i class="fas fa-chart-line me-2"></i> Player Progressions
+                        </a>
+                        <a href="https://youtube.com" target="_blank" class="btn btn-outline-primary">
+                            <i class="fab fa-youtube me-2"></i> Watch Videos
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <!-- Video Container -->
+                    <div class="video-container" data-aos="fade-left">
+                        <img src="images/cover1.jpg" alt="cover-image" class="img-fluid rounded mb-3">
+                        <!--<iframe src="https://www.youtube.com/embed/KriBQVhsgZk?autoplay=1&mute=1&loop=1&playlist=KriBQVhsgZk&controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Particles.js Background -->
+        <div id="particles-js"></div>
+    </section>
+
+        <!-- Banners Section -->
+
+    <section class="py-5 bg-dark2">
+        <div class="container">
+            <div class="col-lg-11 text-center">
+                <h2 class="section-title text-center mb-5" style="margin-left: 2rem;">Featured Updates</h2>
+            </div>
+            <div class="banner-container">
+                <div class="banner-scroll">
+                    <!-- Banner 1 - Upcoming Players -->
+                    <div class="banner">
+                        <img src="images/shotime_june5.jpg" alt="Upcoming Players">
+                    </div>
+                    
+                    <!-- Banner 2 - Latest Players -->
+                    <div class="banner">
+                        <img src="images/highlight_june1st.jpg" alt="Latest Players">
+                    </div>
+                    
+                    <!-- Banner 3 - Featured Players -->
+                    <div class="banner">
+                        <img src="images/epic_june9.jpg" alt="Featured Players">
+                        <div class="banner-caption">
+                            <h3 class="banner-title"></h3>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="banner-nav">
+                    <button class="banner-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                    <button class="banner-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+            
+            <div class="banner-dots">
+                <div class="dot active" data-index="0"></div>
+                <div class="dot" data-index="1"></div>
+                <div class="dot" data-index="2"></div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <!-- Features Section -->
+    <section class="py-5 my-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="section-title">What You'll Find Here</h2>
+                    <p class="lead">Everything a competitive eFootball player needs to improve their game and stay ahead of the competition.</p>
+                </div>
+            </div>
+            
+            <div class="row mt-5 g-4">
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Player Progressions</h3>
+                        <p>Customizable player development paths to maximize your squad's potential in eFootball.</p>
+                        <a href="progressions.html" class="btn btn-sm btn-outline-primary mt-3">Explore Hub</a>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="feature-icon">
+                            <i class="fas fa-chess"></i>
+                        </div>
+                        <h3>Manager Guides</h3>
+                        <p>Recommended managers with tactics and formations that give you the competitive edge.</p>
+                        <a href="managers.html" class="btn btn-sm btn-outline-primary mt-3">See Managers</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="feature-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3>Community Hub</h3>
+                        <p>Join our WhatsApp group to connect with fellow eFootball enthusiasts.</p>
+                        <a href="https://chat.whatsapp.com/L62uwnvKNHcIfrcbaktNgF" target="_blank" class="btn btn-sm btn-outline-primary mt-3">Join Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Videos Section -->
+    <section class="py-5 bg-dark2">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="section-title">Latest YouTube Videos</h2>
+                    <p class="lead">Check out my newest content and don't forget to subscribe!</p>
+                </div>
+            </div>
+            
+            <div class="row mt-5 g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card bg-gray border-0 h-100">
+                        <div class="card-img-top position-relative overflow-hidden" style="padding-top: 56.25%;">
+                            <img src="images/video1.jpg" class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover" alt="Video Thumbnail">
+                            <div class="position-absolute top-50 start-50 translate-middle">
+                                <i class="fab fa-youtube fa-3x text-danger"></i>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">How to Dominate with 4-3-3</h5>
+                            <p class="card-text">Learn the secrets of the 4-3-3 formation that helped me win the regional championship.</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-top-0">
+                            <a href="https://youtu.be/ao6e_kPqWUY?si=cMe_3b4Fk3yA60qP" class="btn btn-sm btn-primary">Watch Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="card bg-gray border-0 h-100">
+                        <div class="card-img-top position-relative overflow-hidden" style="padding-top: 56.25%;">
+                            <img src="images/video2.jpg" class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover" alt="Video Thumbnail">
+                            <div class="position-absolute top-50 start-50 translate-middle">
+                                <i class="fab fa-youtube fa-3x text-danger"></i>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Best Player Progression Paths</h5>
+                            <p class="card-text">My top recommendations for developing young talents into world-class players.</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-top-0">
+                            <a href="https://youtu.be/_-862MJZJ1M?si=nZU60LdTjsDJuu77" class="btn btn-sm btn-primary">Watch Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="card bg-gray border-0 h-100">
+                        <div class="card-img-top position-relative overflow-hidden" style="padding-top: 56.25%;">
+                            <img src="images/video3.jpg" class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover" alt="Video Thumbnail">
+                            <div class="position-absolute top-50 start-50 translate-middle">
+                                <i class="fab fa-youtube fa-3x text-danger"></i>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Tournament Finals Match</h5>
+                            <p class="card-text">Full breakdown of my championship-winning match with commentary.</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-top-0">
+                            <a href="https://youtu.be/-WSVrel7x48?si=iMffqVJmqFnpH0Iy" class="btn btn-sm btn-primary">Watch Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <a href="https://www.youtube.com/@VaKKoTTy_Gaming/videos" target="_blank" class="btn btn-primary">
+                    <i class="fab fa-youtube me-2"></i> View All Videos
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-5 my-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3 text-center">
+                    <div class="display-4 fw-bold text-primary">32K+</div>
+                    <p class="text-uppercase small">YouTube Subscribers</p>
+                </div>
+                <div class="col-md-6 col-lg-3 text-center">
+                    <div class="display-4 fw-bold text-primary">15+</div>
+                    <p class="text-uppercase small">Tournament Wins</p>
+                </div>
+                <div class="col-md-6 col-lg-3 text-center">
+                    <div class="display-4 fw-bold text-primary">50+</div>
+                    <p class="text-uppercase small">Player Progressions</p>
+                </div>
+                <div class="col-md-6 col-lg-3 text-center">
+                    <div class="display-4 fw-bold text-primary">#1 RANK</div>
+                    <p class="text-uppercase small">FIFA-e Ranking (INDIA)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h4 class="mb-4">VaKKoTTy Gaming</h4>
+                    <p>Your ultimate resource for competitive eFootball gameplay, strategies, and player development.</p>
+                    <div class="mt-4">
+                        <a href="https://www.youtube.com/@VaKKoTTy_Gaming" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/vakkotty_gaming/" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="https://discord.gg/8WMPvuQY" class="social-icon"><i class="fab fa-discord"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="mb-4">Quick Links</h5>
+                    <div class="footer-links">
+                        <a href="index.html">Home</a>
+                        <a href="progressions.html">Player Progressions</a>
+                        <a href="managers.html">Tatics</a>
+                        <a href="gallery.html">Gallery</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="mb-4">Community</h5>
+                    <div class="footer-links">
+                        <a href="https://www.whatsapp.com/channel/0029Vb6DTQI6buMQaym2Y03U" target="_blank">Whatsapp Channel</a>
+                        <a href="https://chat.whatsapp.com/L62uwnvKNHcIfrcbaktNgF" target="_blank">Whatsapp Group</a>
+                        <a href="https://discord.gg/8WMPvuQY" target="_blank">Discord</a>
+                        <a href="https://www.instagram.com/vakkotty_gaming/" target="_blank">Instagram</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="mb-4">Resources</h5>
+                    <div class="footer-links">
+                        <a href="https://youtu.be/m66irVaIbCg?si=v_CxtugR8PB03nk3">Tutorials</a>
+                        <a href="https://www.konami.com/efootball/en/">Game Updates</a>
+                        <a href="https://efootballhub.net/">Player Database</a>
+                        <a href="https://www.youtube.com/@VaKKoTTy_Gaming/shorts">Shorts</a>
+                        <a href="https://www.youtube.com/@VaKKoTTy_Gaming/streams">Live Streams</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="mb-4">Updates</h5>
+                    <p>Subscribe for the latest tips and updates.</p>
+                    <form class="mt-3">
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control bg-dark border-dark" placeholder="Your Email">
+                            <button class="btn btn-primary" type="submit">
+                                <a href="https://www.youtube.com/@VaKKoTTy_Gaming/featured">Subscribe</a>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center copyright">
+                    <p class="mb-0">&copy; 2025 VaKKoTTy Gaming. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS animation
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Loading screen
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.querySelector('.loading-screen').style.opacity = '0';
+                setTimeout(function() {
+                    document.querySelector('.loading-screen').style.display = 'none';
+                }, 500);
+            }, 2000); // Adjust timing as needed
+        });
+
+        // Loading screen - only show on initial page load
+document.addEventListener('DOMContentLoaded', function() {
+    // Check if this is the first visit in this session
+    if (!sessionStorage.getItem('visited')) {
+        const loadingScreen = document.querySelector('.loading-screen');
+        
+        // Show loading screen
+        loadingScreen.style.display = 'flex';
+        
+        // After loading completes
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                loadingScreen.style.opacity = '0';
+                setTimeout(function() {
+                    loadingScreen.style.display = 'none';
+                }, 500);
+            }, 2000); // Adjust timing as needed
+            
+            // Set flag in sessionStorage
+            sessionStorage.setItem('visited', 'true');
+        });
+    } else {
+        // Hide loading screen immediately if returning visitor
+        document.querySelector('.loading-screen').style.display = 'none';
+    }
+});
+
+        // Theme toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const htmlElement = document.documentElement;
+        
+        // Check for saved theme preference or use preferred color scheme
+        const savedTheme = localStorage.getItem('theme') || 
+                          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        htmlElement.setAttribute('data-bs-theme', savedTheme);
+        
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-bs-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            htmlElement.setAttribute('data-bs-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+
+        // Particles.js configuration
+        particlesJS('particles-js', {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#FF6B00"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#FF6B00",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 2,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "grab"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 140,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+
+        // Banner carousel functionality
+        document.addEventListener('DOMContentLoaded', function() {
+        const bannerContainer = document.querySelector('.banner-container');
+        const bannerScroll = document.querySelector('.banner-scroll');
+        const banners = document.querySelectorAll('.banner');
+        const dots = document.querySelectorAll('.dot');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+        let currentIndex = 1; // Start at first actual banner (not clone)
+        let isTransitioning = false;
+        let interval;
+        const transitionDuration = 500; // Match this with CSS transition time
+
+        // Clone first and last banners for seamless looping
+        const firstClone = banners[0].cloneNode(true);
+        const lastClone = banners[banners.length - 1].cloneNode(true);
+        bannerScroll.appendChild(firstClone);
+        bannerScroll.insertBefore(lastClone, banners[0]);
+
+        // Update banner width and position
+        function initializeBanners() {
+            const containerWidth = bannerContainer.offsetWidth;
+            const allBanners = document.querySelectorAll('.banner');
+            
+            allBanners.forEach(banner => {
+                banner.style.minWidth = containerWidth + 'px';
+            });
+
+            // Set initial position (showing first actual banner, not clone)
+            bannerScroll.style.transform = `translateX(-${containerWidth}px)`;
+            updateDots();
+        }
+
+        // Update banner position with transition
+        function goToBanner(index) {
+            if (isTransitioning) return;
+            isTransitioning = true;
+            
+            const containerWidth = bannerContainer.offsetWidth;
+            bannerScroll.style.transition = `transform ${transitionDuration}ms ease`;
+            bannerScroll.style.transform = `translateX(-${(index + 1) * containerWidth}px)`;
+            
+            setTimeout(() => {
+                isTransitioning = false;
+                currentIndex = index;
+                updateDots();
+            }, transitionDuration);
+        }
+
+        // Handle transition end for infinite loop
+        function handleTransitionEnd() {
+            const containerWidth = bannerContainer.offsetWidth;
+            const allBanners = document.querySelectorAll('.banner');
+            
+            // If at first clone (index 0), jump to last real banner
+            if (currentIndex === -1) {
+                bannerScroll.style.transition = 'none';
+                bannerScroll.style.transform = `translateX(-${banners.length * containerWidth}px)`;
+                currentIndex = banners.length - 1;
+                setTimeout(() => {
+                    bannerScroll.style.transition = `transform ${transitionDuration}ms ease`;
+                }, 50);
+            }
+            // If at last clone (index banners.length), jump to first real banner
+            else if (currentIndex === banners.length) {
+                bannerScroll.style.transition = 'none';
+                bannerScroll.style.transform = `translateX(-${containerWidth}px)`;
+                currentIndex = 0;
+                setTimeout(() => {
+                    bannerScroll.style.transition = `transform ${transitionDuration}ms ease`;
+                }, 50);
+            }
+            
+            updateDots();
+        }
+
+        // Next banner
+        function nextBanner() {
+            stopAutoScroll();
+            goToBanner((currentIndex + 1) % banners.length);
+            startAutoScroll();
+        }
+
+        // Previous banner
+        function prevBanner() {
+            stopAutoScroll();
+            goToBanner((currentIndex - 1 + banners.length) % banners.length);
+            startAutoScroll();
+        }
+
+        // Update navigation dots
+        function updateDots() {
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
+        }
+
+        // Auto-scroll
+        function startAutoScroll() {
+            stopAutoScroll();
+            interval = setInterval(nextBanner, 5000);
+        }
+
+        // Stop auto-scroll
+        function stopAutoScroll() {
+            clearInterval(interval);
+        }
+
+        // Initialize
+        initializeBanners();
+        startAutoScroll();
+
+        // Event listeners
+        window.addEventListener('resize', initializeBanners);
+        bannerScroll.addEventListener('transitionend', handleTransitionEnd);
+        
+        nextBtn.addEventListener('click', nextBanner);
+        prevBtn.addEventListener('click', prevBanner);
+        
+        dots.forEach(dot => {
+            dot.addEventListener('click', function() {
+                const index = parseInt(this.getAttribute('data-index'));
+                if (index !== currentIndex) {
+                    stopAutoScroll();
+                    goToBanner(index);
+                    startAutoScroll();
+                }
+            });
+        });
+
+        // Pause on hover
+        bannerContainer.addEventListener('mouseenter', stopAutoScroll);
+        bannerContainer.addEventListener('mouseleave', startAutoScroll);
+    });
+
+    </script>
+</body>
+</html>
