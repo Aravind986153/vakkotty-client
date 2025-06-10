@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms & Conditions | VaKKoTTy Gaming</title>
+    <!-- Bootstrap 5.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Oxanium:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FF6B00;
+            --primary-dark: #E05D00;
+            --secondary: #00A8E8;
+            --dark: #121212;
+            --light: #F8F9FA;
+            --gray: #2D2D2D;
+            --light-gray: #E0E0E0;
+        }
+
+        body {
+            font-family: 'Oxanium', sans-serif;
+            background-color: var(--dark);
+            color: var(--light);
+            line-height: 1.6;
+        }
+
+        .navbar {
+            background-color: rgba(18, 18, 18, 0.9) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 107, 0, 0.3);
+        }
+
+        .navbar-brand {
+            font-weight: 900;
+            font-size: 1.8rem;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .nav-link {
+            color: var(--light) !important;
+            font-weight: 500;
+            margin: 0 10px;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--primary) !important;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary);
+            transition: width 0.3s;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+                .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background-color: var(--gray);
+            color: var(--light);
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: all 0.3s;
+        }
+
+        .social-icon:hover {
+            background-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .footer {
+            background-color: var(--gray);
+            padding: 50px 0 20px;
+        }
+
+        .footer-links a {
+            color: var(--light);
+            text-decoration: none;
+            transition: color 0.3s;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            margin-top: 30px;
+        }
+
+        .terms-container {
+            max-width: 900px;
+            margin: 80px auto;
+            padding: 30px;
+            background-color: var(--gray);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            color: white;
+            font-weight: 600;
+            padding: 10px 25px;
+            border-radius: 50px;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            border-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 107, 0, 0.3);
+        }
+
+        .btn-outline-primary {
+            border-color: var(--primary);
+            color: var(--primary);
+            font-weight: 600;
+            padding: 10px 25px;
+            border-radius: 50px;
+            transition: all 0.3s;
+        }
+
+        .btn-outline-primary:hover {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 107, 0, 0.3);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary);
+            margin-top: 30px;
+        }
+
+        h1 {
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        a {
+            color: var(--secondary);
+            text-decoration: none;
+        }
+
+        .last-updated {
+            font-style: italic;
+            color: var(--light-gray);
+            margin-bottom: 30px;
+        }
+
+        ol, ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        /* Light Mode Styles */
+
+        [data-bs-theme="light"] .terms-container {
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        [data-bs-theme="light"] h1, 
+        [data-bs-theme="light"] h2, 
+        [data-bs-theme="light"] h3 {
+            color: var(--primary-dark);
+        }
+
+        [data-bs-theme="light"] .last-updated {
+            color: var(--gray);
+        }
+
+        /* Light Mode Styles */
+        [data-bs-theme="light"] body {
+            background-color: var(--light);
+            color: var(--dark);
+        }
+
+        [data-bs-theme="light"] .navbar {
+            background-color: rgba(248, 249, 250, 0.9) !important;
+            border-bottom: 1px solid rgba(0, 168, 232, 0.3);
+        }
+
+        [data-bs-theme="light"] .nav-link {
+            color: var(--dark) !important;
+        }
+
+        [data-bs-theme="light"] .feature-card {
+            background-color: white;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        [data-bs-theme="light"] .feature-card:hover {
+            border-color: var(--secondary);
+        }
+
+        [data-bs-theme="light"] .footer {
+            background-color: #f1f1f1;
+        }
+
+        [data-bs-theme="light"] .footer-links a {
+            color: var(--dark);
+        }
+
+        [data-bs-theme="light"] .copyright {
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        [data-bs-theme="light"] .social-icon {
+            background-color: #e0e0e0;
+            color: var(--dark);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--gray);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-dark);
+        }
+
+        /* Dark/Light Mode Toggle */
+        .theme-toggle {
+            width: 50px;
+            height: 25px;
+            background-color: var(--gray);
+            border-radius: 50px;
+            position: relative;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            display: flex;
+            align-items: center;
+            padding: 0 5px;
+        }
+
+        .theme-toggle i {
+            font-size: 12px;
+            color: var(--light);
+            transition: all 0.3s;
+        }
+
+        .theme-toggle .sun {
+            opacity: 0;
+            transform: translateX(-10px);
+        }
+
+        .theme-toggle .moon {
+            opacity: 1;
+            transform: translateX(10px);
+        }
+
+        [data-bs-theme="light"] .theme-toggle .sun {
+            opacity: 1;
+            transform: translateX(10px);
+            color: var(--dark);
+        }
+
+        [data-bs-theme="light"] .theme-toggle .moon {
+            opacity: 0;
+            transform: translateX(-10px);
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">VaKKoTTy Gaming</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="progressions.html">Player Progressions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="managers.html">Tatics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="terms.html">T&C</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="privacy.html">Privacy Policy</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <button class="btn btn-outline-primary" onclick="window.open('https://www.youtube.com/@VaKKoTTy_Gaming')">
+                            <i class="fab fa-youtube me-2"></i>YouTube
+                        </button>
+                    </li>
+                    <li class="nav-item ms-lg-2 d-flex align-items-center">
+                        <button class="theme-toggle" id="themeToggle">
+                            <i class="fas fa-sun sun"></i>
+                            <i class="fas fa-moon moon"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Terms & Conditions Content -->
+    <div class="terms-container">
+        <h1>Terms & Conditions</h1>
+        <p class="last-updated">Last Updated: June 10, 2025</p>
+
+        <p>Welcome to VaKKoTTy Gaming website. These Terms & Conditions govern your use of our website <a href="https://vakkotty.in">vakkotty.in</a> and any related services.</p>
+
+        <h2>1. Acceptance of Terms</h2>
+        <p>By accessing or using our website, you agree to be bound by these Terms. If you disagree with any part, you may not access the website.</p>
+
+        <h2>2. Intellectual Property</h2>
+        <p>All content on this website, including but not limited to:</p>
+        <ul>
+            <li>Player progression guides</li>
+            <li>Manager tactics and formations</li>
+            <li>YouTube video content</li>
+            <li>Graphics and logos</li>
+        </ul>
+        <p>is the property of VaKKoTTy Gaming and protected by copyright laws. You may not reproduce, distribute, or create derivative works without our express permission.</p>
+
+        <h2>3. User Responsibilities</h2>
+        <p>When using our website, you agree not to:</p>
+        <ol>
+            <li>Use the website for any unlawful purpose</li>
+            <li>Attempt to gain unauthorized access to our systems</li>
+            <li>Upload or transmit viruses or harmful code</li>
+            <li>Harass, abuse, or harm other users</li>
+            <li>Use automated systems to access the website</li>
+        </ol>
+
+        <h2>4. eFootball Content Disclaimer</h2>
+        <p>Our player progression guides and manager tactics are based on our experience with eFootball™ and are not endorsed by or affiliated with Konami Digital Entertainment. eFootball™ is a registered trademark of Konami Digital Entertainment.</p>
+
+        <h2>5. YouTube Content</h2>
+        <p>Our YouTube videos are provided for entertainment and educational purposes only. We make no guarantees about:</p>
+        <ul>
+            <li>Results from following our strategies</li>
+            <li>Accuracy of player statistics which may change with game updates</li>
+            <li>Availability of specific players or managers in the game</li>
+        </ul>
+
+        <h2>6. Community Guidelines</h2>
+        <p>When participating in our community (Discord, WhatsApp, etc.):</p>
+        <ol>
+            <li>Be respectful to all members</li>
+            <li>No cheating or hacking discussions</li>
+            <li>Keep discussions relevant to eFootball</li>
+            <li>No spamming or self-promotion without permission</li>
+        </ol>
+        <p>We reserve the right to remove any user from our community for violating these guidelines.</p>
+
+        <h2>7. Limitation of Liability</h2>
+        <p>VaKKoTTy Gaming shall not be liable for any:</p>
+        <ul>
+            <li>Loss or damage resulting from use of our content</li>
+            <li>Changes to eFootball that make our content obsolete</li>
+            <li>Interruptions or errors in website availability</li>
+            <li>Conduct of third parties on our community platforms</li>
+        </ul>
+
+        <h2>8. Changes to Terms</h2>
+        <p>We may modify these Terms at any time. Continued use after changes constitutes acceptance of the new Terms.</p>
+
+        <h2>9. Governing Law</h2>
+        <p>These Terms shall be governed by the laws of [Your Country/State] without regard to its conflict of law provisions.</p>
+
+        <h2>10. Contact Information</h2>
+        <p>For questions about these Terms, please contact us:</p>
+        <p>
+            <strong>Email:</strong> <a href="mailto:vakkottygaming786@gmail.com">legal@vakkotty.in</a><br>
+            <strong>Contact Form:</strong> <a href="contact.html">Visit our Contact Page</a>
+        </p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h4 class="mb-4">VaKKoTTy Gaming</h4>
+                    <p>Your ultimate resource for competitive eFootball gameplay, strategies, and player development.</p>
+                    <div class="mt-4">
+                        <a href="https://www.youtube.com/@VaKKoTTy_Gaming" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/vakkotty_gaming/" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="https://discord.gg/8WMPvuQY" class="social-icon"><i class="fab fa-discord"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="mb-4">Quick Links</h5>
+                    <div class="footer-links">
+                        <a href="index.html">Home</a>
+                        <a href="progressions.html">Player Progressions</a>
+                        <a href="managers.html">Tatics</a>
+                        <a href="gallery.html">Gallery</a>
+                        <a href="contact.html">Contact</a>
+                        <a href="terms.html">Terms and Conditions</a>
+                        <a href="privacy.html">Privacy Policy</a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="mb-4">Community</h5>
+                    <div class="footer-links">
+                        <a href="https://www.whatsapp.com/channel/0029Vb6DTQI6buMQaym2Y03U" target="_blank">Whatsapp Channel</a>
+                        <a href="https://chat.whatsapp.com/L62uwnvKNHcIfrcbaktNgF" target="_blank">Whatsapp Group</a>
+                        <a href="https://discord.gg/8WMPvuQY" target="_blank">Discord</a>
+                        <a href="https://www.instagram.com/vakkotty_gaming/" target="_blank">Instagram</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="mb-4">Resources</h5>
+                    <div class="footer-links">
+                        <a href="https://youtu.be/m66irVaIbCg?si=v_CxtugR8PB03nk3">Tutorials</a>
+                        <a href="https://www.konami.com/efootball/en/">Game Updates</a>
+                        <a href="https://efootballhub.net/">Player Database</a>
+                        <a href="https://www.youtube.com/@VaKKoTTy_Gaming/shorts">Shorts</a>
+                        <a href="https://www.youtube.com/@VaKKoTTy_Gaming/streams">Live Streams</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="mb-4">Updates</h5>
+                    <p>Subscribe for the latest tips and updates.</p>
+                    <form class="mt-3">
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control bg-dark border-dark" placeholder="Your Email">
+                            <button class="btn btn-primary" type="submit">
+                                <a href="https://www.youtube.com/@VaKKoTTy_Gaming/featured">Subscribe</a>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center copyright">
+                    <p class="mb-0">&copy; 2025 VaKKoTTy Gaming. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const htmlElement = document.documentElement;
+        
+        // Check for saved theme preference or use preferred color scheme
+        const savedTheme = localStorage.getItem('theme') || 
+                          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        htmlElement.setAttribute('data-bs-theme', savedTheme);
+        
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-bs-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            htmlElement.setAttribute('data-bs-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+    </script>
+</body>
+</html>
